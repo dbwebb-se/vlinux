@@ -1,0 +1,159 @@
+# --------------------------------------------------------------------------
+#
+# Init
+#
+dbwebb init-me
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom01
+#
+
+#
+# install
+# https://dbwebb.se/uppgift/installera-debian-som-server
+#
+touch me/kmom01/install/log.txt
+touch me/kmom01/install/ssh.png
+
+#
+# redovisa
+# https://dbwebb.se/uppgift/skapa-en-me-sida-till-linux-kursen
+#
+cp -ri example/redovisa me
+dbwebb validate redovisa
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom02
+#
+
+# bash1
+cd me/kmom02 && dbwebb recreate bash1
+cd me/kmom02/bash1 && ./answer.bash; [[ $? = 42 ]]
+dbwebb validate bash1
+
+#
+# vhost
+# https://dbwebb.se/uppgift/installera-debian-som-server
+#
+touch me/kmom02/vhost/log.txt
+touch me/kmom02/vhost/me.linux.se.conf
+touch me/kmom02/vhost/dump.png
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom03
+#
+
+# bash2
+cd me/kmom03 && dbwebb recreate bash2
+cd me/kmom03/bash2 && ./answer.bash; [[ $? = 42 ]]
+dbwebb validate bash2
+
+
+# script
+# https://dbwebb.se/uppgift/mina-forsta-bash-script
+test -d me/kmom03/script
+
+
+# commands
+# https://dbwebb.se/uppgift/ett-bash-script-med-options-command-arguments
+cp example/bash/cli-with-options/bash-cli me/kmom03/commands/commands
+chmod 755 me/kmom03/commands/commands
+
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom04
+#
+
+#
+# node1
+# https://dbwebb.se/uppgift/linux-lab3-introduktion-till-nodejs
+#
+dbwebb recreate node1
+node me/kmom04/node1/answer.js; [[ $? = 42 ]]
+dbwebb validate node1
+
+
+#
+# server
+# https://dbwebb.se/uppgift/skapa-en-restful-http-server-med-node-js-och-klient-i-bash
+#
+cp example/nodejs/simpleServer/{index,server}.js me/kmom04/server
+cp example/bash/environment-variables-with-defaults/client.bash me/kmom04/server
+dbwebb validate server
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom05
+#
+
+#
+# node2
+# https://dbwebb.se/uppgift/linux-lab4-asynkron-programmering
+#
+dbwebb recreate node2
+node me/kmom04/node1/answer.js; [[ $? = 42 ]]
+dbwebb validate node2
+
+#
+# maze
+# https://dbwebb.se/uppgift/los-mazen-med-din-mazerunner-i-bash
+#
+touch me/kmom05/maze/mazerunnder.bash
+dbwebb validate maze
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom06
+#
+
+#
+# gomoku
+# https://dbwebb.se/uppgift/skapa-klienter-och-servrar-som-spelar-luffarschack-i-node-js
+#
+# client
+cp example/nodejs/gomoku/{GomokuBoard,index-random}.js me/kmom06/gomoku
+touch me/kmom06/gomoku/index-random.js
+
+# server
+cp example/nodejs/gomoku/{GomokuServer,index-server}.js me/kmom06/gomoku
+cp example/nodejs/router/router.js me/kmom06/gomoku
+
+# client to server
+cp example/nodejs/gomoku/{GomokuClient,index-client}.js me/kmom06/gomoku
+
+
+
+# --------------------------------------------------------------------------
+#
+# Kmom10
+#
+
+
+
+# --------------------------------------------------------------------------
+#
+# Inspect
+#
+#make dbwebb-inspect options="--yes --no-validate" what=kmom01
+#make dbwebb-inspect options="--yes --no-validate" what=kmom02
+#make dbwebb-inspect options="--yes --no-validate" what=kmom03
+#make dbwebb-inspect options="--yes --no-validate" what=kmom04
+#make dbwebb-inspect options="--yes --no-validate" what=kmom05
+#make dbwebb-inspect options="--yes --no-validate" what=kmom06
+#make dbwebb-inspect options="--yes --no-validate" what=kmom10
