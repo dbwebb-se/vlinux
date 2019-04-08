@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # A template for creating command line scripts taking options, commands
 # and arguments.
@@ -36,7 +36,7 @@ function usage
 "  --help, -h     Print help."
 "  --version, -h  Print version."
     )
-    
+
     printf "%s\n" "${txt[@]}"
 }
 
@@ -52,7 +52,7 @@ function badUsage
 "For an overview of the command, execute:"
 "$SCRIPT --help"
     )
-    
+
     [[ $message ]] && printf "$message\n"
 
     printf "%s\n" "${txt[@]}"
@@ -106,10 +106,10 @@ function app-command2
 function app-calendar
 {
     local events="$1"
-    
+
     echo "This is output from command3, showing the current calender."
     cal -3
-    
+
     if [ "$events" = "events" ]; then
         echo
         calendar
@@ -143,12 +143,12 @@ do
             app-$command $*
             exit 0
         ;;
-        
+
         *)
             badUsage "Option/command not recognized."
             exit 1
         ;;
-        
+
     esac
 done
 
