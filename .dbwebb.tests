@@ -63,10 +63,11 @@ dbwebb validate bash2
 test -d me/kmom03/script
 
 
+
 # commands
 # https://dbwebb.se/uppgift/ett-bash-script-med-options-command-arguments
-cp example/bash/cli-with-options/bash-cli me/kmom03/commands/commands
-chmod 755 me/kmom03/commands/commands
+# cp example/bash/cli-with-options/bash-cli me/kmom03/commands/commands
+# chmod 755 me/kmom03/commands/commands
 
 
 
