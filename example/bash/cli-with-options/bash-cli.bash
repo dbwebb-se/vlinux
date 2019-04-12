@@ -53,7 +53,7 @@ function badUsage
 "$SCRIPT --help"
     )
 
-    [[ $message ]] && printf "$message\n"
+    [[ -n $message ]] && printf "%s\n" "$message"
 
     printf "%s\n" "${txt[@]}"
 }
@@ -140,7 +140,7 @@ do
         | calendar)
             command=$1
             shift
-            app-$command $*
+            app-"$command" "$*"
             exit 0
         ;;
 
