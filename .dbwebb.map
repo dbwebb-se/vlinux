@@ -16,8 +16,9 @@ me/kmom03/bash2
 me/kmom03/script
 
 # kmom04
-me/kmom04/node1
 me/kmom04/server
+me/kmom04/client
+
 
 # kmom05
 me/kmom05/node2

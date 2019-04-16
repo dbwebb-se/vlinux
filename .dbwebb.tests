@@ -81,18 +81,17 @@ test -d me/kmom03/script
 # node1
 # https://dbwebb.se/uppgift/linux-lab3-introduktion-till-nodejs
 #
-dbwebb recreate node1
-node me/kmom04/node1/answer.js; [[ $? = 42 ]]
-dbwebb validate node1
+#dbwebb recreate node1
+#node me/kmom04/node1/answer.js; [[ $? = 42 ]]
+#dbwebb validate node1
 
 
 #
 # server
-# https://dbwebb.se/uppgift/skapa-en-restful-http-server-med-node-js-och-klient-i-bash
+# https://dbwebb.se/uppgift/webbserver-i-docker
 #
-cp example/nodejs/simpleServer/{index,server}.js me/kmom04/server
-cp example/bash/environment-variables-with-defaults/client.bash me/kmom04/server
-dbwebb validate server
+test -d me/kmom04/server
+
 
 
 
