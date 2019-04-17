@@ -77,20 +77,19 @@ test -d me/kmom03/script
 # Kmom04
 #
 
-#
-# node1
-# https://dbwebb.se/uppgift/linux-lab3-introduktion-till-nodejs
-#
-#dbwebb recreate node1
-#node me/kmom04/node1/answer.js; [[ $? = 42 ]]
-#dbwebb validate node1
-
 
 #
 # server
 # https://dbwebb.se/uppgift/webbserver-i-docker
 #
 test -d me/kmom04/server
+
+
+#
+# client
+# https://dbwebb.se/uppgift/bash-script-testa-routes
+#
+test -d me/kmom04/client
 
 
 
