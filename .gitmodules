@@ -1,3 +1,6 @@
 [submodule "solution"]
 	path = .solution
 	url = git@gitlab.com:dbwebb/vlinux-solutions.git
+[submodule ".solutions"]
+	path = .solutions
+	url = git@gitlab.com:dbwebb/vlinux-solutions.git
