@@ -22,12 +22,17 @@ me/kmom04/client
 
 
 # kmom05
-me/kmom05/node2
 me/kmom05/maze
+me/kmom05/maze/server
+me/kmom05/maze/client
+
+
 
 # kmom06
-#me/kmom06/node3
-me/kmom06/gomoku
+me/kmom06/maze2
+me/kmom06/maze2/server
+me/kmom06/maze2/client
+
 
 # kmom10
 me/kmom10/bthappen
