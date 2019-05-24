@@ -121,6 +121,10 @@ dbwebb validate maze
 # Kmom06
 #
 
+cd me/kmom06 && dbwebb recreate sed1
+cd me/kmom06/sed1 && ./answer.bash; [[ $? = 42 ]]
+dbwebb validate sed1
+
 #
 # gomoku
 # https://dbwebb.se/uppgift/skapa-klienter-och-servrar-som-spelar-luffarschack-i-node-js

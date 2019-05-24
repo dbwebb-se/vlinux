@@ -16,7 +16,6 @@ me/kmom03/bash2
 me/kmom03/script
 
 # kmom04
-me/kmom04/sed1
 me/kmom04/server
 me/kmom04/client
 
@@ -29,6 +28,7 @@ me/kmom05/maze/client
 
 
 # kmom06
+me/kmom04/sed1
 me/kmom06/maze2
 me/kmom06/maze2/server
 me/kmom06/maze2/client
