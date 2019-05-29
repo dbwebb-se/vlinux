@@ -1,0 +1,111 @@
+
+
+[0;30;42m>>> ======= GUI Inspect               =======[0m
+
+Wed May 29 15:18:57 CEST 2019
+klwstud kmom03
+download, docker
+Inspect GUI v1.4.2 (2019-05-03)
+http://www.student.bth.se/~klwstud/dbwebb-kurser/vlinux/me/redovisa
+
+
+[0;30;42m>>> ======= Feedback                  =======[0m
+
+
+
+
+
+
+[0;30;42m>>> ======= Download (and potato)     =======[0m
+
+Doing a silent download, potatoe if needed.
+
+
+[0;30;42m>>> ======= Docker Run Extra (pre)    =======[0m
+
+>>> -------------- Pre inspect -------------------------
+#### Command cal: ####
+commands.bash: line 87: cal: command not found
+#### Command greet: ####
+Hello , you are looking good today!
+#### Command loop 5 10: ####
+5
+6
+7
+8
+9
+10
+#### Command lower 35 45: ####
+35 36 37 38 39 40 41
+#### Command reverse dbwebb: ####
+bbewbd
+Press Enter to move on...
+
+[0;30;42m>>> ======= dbwebb inspect            =======[0m
+
+Do dbwebb inspect in the background and write output to logfile 'log-gui-inspect.ansi'.
+
+
+[0;30;42m>>> ======= Docker Run Extra          =======[0m
+
+make docker-run-server container="course-cli" what="bash .dbwebb/script/inspect/kmom.d/run.bash $kmom"
+[32;01m--->   Run --service-ports container= with what= one off command.[0m
+[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run --service-ports course-cli bash .dbwebb/script/inspect/kmom.d/run.bash kmom03
+>>> -------------- Start                -------------------------
+>>> Running all scripts in '/home/dbwebb/repo/.dbwebb/script/inspect/kmom.d/kmom03'.
+
+>>> -------------- 10_check-lab2.bash   -------------------------
+>>> Ready to begin.
+>>> 1.1 CORRECT. Well done! (1p)
+>>> 1.2 FAIL. (1p)
+>>> You said:
+
+>>> 1.3 FAIL. (1p)
+>>> You said:
+21386
+>>> 1.4 CORRECT. Well done! (1p)
+>>> 1.5 CORRECT. Well done! (1p)
+>>> 1.6 CORRECT. Well done! (1p)
+>>> 1.7 CORRECT. Well done! (1p)
+>>> 1.8 CORRECT. Well done! (1p)
+>>> 1.9 CORRECT. Well done! (1p)
+>>> 1.10 CORRECT. Well done! (1p)
+>>> 2.1 CORRECT. Well done! (3p)
+>>> 2.2 CORRECT. Well done! (3p)
+>>> 2.3 FAIL. (3p)
+>>> You said:
+42
+>>> Hint:
+43
+>>> Done with status 13/10/3/0 (Total/Correct/Failed/Not done).
+>>> Points earned: 14p of 19p (PASS=>10p, PASS W DISTINCTION=>19p).
+[0;32m>>> Grade: PASS! :-)[m
+Done viewing the lab?
+[0;30;42mOK[0m 10_check-lab2.bash
+
+>>> -------------- 20_check-scriptfolder.bash -------------------------
+
+[36m----- Check for: commands.bash, Dockerfile, dockerhub.txt -----
+(B[mtotal 12
+-rw-r--r-- 1 dbwebb dbwebb   91 May 29 09:54 Dockerfile
+-rwxr-xr-x 1 dbwebb dbwebb 1523 May 29 09:46 commands.bash
+-rw-r--r-- 1 dbwebb dbwebb   34 May 29 12:03 dockerhub.txt
+
+[0;30;42mOK[0m 20_check-scriptfolder.bash
+
+>>> -------------- 99_last-check.bash   -------------------------
+[36m----- Do you want to start a bashprompt in Docker? [Y/n] ----- 
+(B[m]0;dbwebb@bf98ca874bf8: ~/repodbwebb@bf98ca874bf8:~/repo$ 
+]0;dbwebb@bf98ca874bf8: ~/repodbwebb@bf98ca874bf8:~/repo$ exit
+exit
+[0;30;42mOK[0m 99_last-check.bash
+
+[1;37;40mDONE[0m All scripts were executed.
+>>> -------------- Summary              -------------------------
+[0;30;42mOK[0m 10_check-lab2.bash
+[0;30;42mOK[0m 20_check-scriptfolder.bash
+[0;30;42mOK[0m 99_last-check.bash
+
+
+[0;30;42m>>> ======= Docker Run Extra (post)   =======[0m
+

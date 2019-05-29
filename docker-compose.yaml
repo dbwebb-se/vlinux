@@ -5,3 +5,4 @@ services:
         volumes:
             - .:/home/dbwebb/repo
         ports: [ "10042:80" ]
+    
