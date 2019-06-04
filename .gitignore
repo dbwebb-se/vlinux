@@ -7,3 +7,4 @@ inspect.log
 inspect.output
 # Mac
 .DS_Store
+*.ansi
