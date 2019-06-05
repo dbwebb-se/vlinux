@@ -14,30 +14,8 @@
 -*.min.*
 -*.png
 -*.jpg
+-*.xls*
+-*.md
 -./.venv
 
-
--*/build/*
--*/coverage/*
--./me/*
 -*/node_modules/*
--*/vendor/*
-
-+./build/webroot/*
--./build/webroot/*/build/*
--./build/webroot/*/coverage/*
--./build/webroot/*/node_modules/*
--./build/webroot/*/vendor/*
-
-
-#+./me/*/src/*
-#+./me/*/test/*
-#+./me/*/css/*
-
-#-./me/*/platforms/*
-#+./me/*/platforms/browser/www/*.html
-#+./me/*/platforms/browser/www/css/*.css
-#+./me/*/platforms/browser/www/js/*.js
-
-# -- Really remove files, even if found below +subdirs
-#--*font-awesome*
