@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cd me/kmom02/bash1 || exit 1
+cd me/kmom06/sed1 || exit 1
 
 ./answer.bash
 

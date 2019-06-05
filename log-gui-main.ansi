@@ -2,8 +2,8 @@
 
 [0;30;42m>>> ======= GUI Inspect               =======[0m
 
-Wed May 29 15:18:57 CEST 2019
-klwstud kmom03
+Tue Jun  4 14:00:09 CEST 2019
+klwstud kmom05
 download, docker
 Inspect GUI v1.4.2 (2019-05-03)
 http://www.student.bth.se/~klwstud/dbwebb-kurser/vlinux/me/redovisa
@@ -12,7 +12,7 @@ http://www.student.bth.se/~klwstud/dbwebb-kurser/vlinux/me/redovisa
 [0;30;42m>>> ======= Feedback                  =======[0m
 
 
-
+Jag testade din mazerunner och den rullar på bra. Det är lätt hänt att det blir ett övermäktigt kursmoment, men du verkar ha bra koll på läget och den fungerar enligt instruktionerna, snyggt jobbat!
 
 
 
@@ -24,22 +24,44 @@ Doing a silent download, potatoe if needed.
 [0;30;42m>>> ======= Docker Run Extra (pre)    =======[0m
 
 >>> -------------- Pre inspect -------------------------
-#### Command cal: ####
-commands.bash: line 87: cal: command not found
-#### Command greet: ####
-Hello , you are looking good today!
-#### Command loop 5 10: ####
-5
-6
-7
-8
-9
-10
-#### Command lower 35 45: ####
-35 36 37 38 39 40 41
-#### Command reverse dbwebb: ####
-bbewbd
-Press Enter to move on...
+[36mView Server Dockerfile? [Y/n] (B[mFROM node:8
+
+WORKDIR /server
+
+COPY . ./
+
+CMD [ "node", "index.js" ]
+[36mView Client Dockerfile? [Y/n] (B[mFROM debian:stretch-slim
+
+RUN apt-get update && \
+    apt-get install -y curl
+
+WORKDIR /client
+
+COPY mazerunner.bash ./
+
+ENTRYPOINT "bash"
+
+CMD [ "./mazerunner.bash", "init" ]
+[33mView kmom05.bash? [Y/n] (B[m#!/usr/bin/env bash
+
+docker network create dbwebb
+
+docker run -d --rm --net dbwebb --name mazeserver -p 1337:1337 lewenhagen/vlinux-mazeserver
+
+docker run -it --rm --net dbwebb --link mazeserver:mazeserver --name myclient lewenhagen/vlinux-mazeclient
+
+docker stop mazeserver && docker network rm dbwebb
+[36mExecute kmom05.bash? [Y/n] (B[maabdb08d87ffb77ac2912cb25bf28953b0359cf768ee1fb2e943ace1edbd1168
+f3d8867a934720dd32e5aac1b59aad3e0d7986d3982116dc348f5c51508fa933
+root@25a1b721804a:/client# ./mazerunner.bash init
+text,gameid
+New game initialized.,46287
+root@25a1b721804a:/client# exit
+exit
+mazeserver
+dbwebb
+
 
 [0;30;42m>>> ======= dbwebb inspect            =======[0m
 
@@ -50,61 +72,272 @@ Do dbwebb inspect in the background and write output to logfile 'log-gui-inspect
 
 make docker-run-server container="course-cli" what="bash .dbwebb/script/inspect/kmom.d/run.bash $kmom"
 [32;01m--->   Run --service-ports container= with what= one off command.[0m
-[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run --service-ports course-cli bash .dbwebb/script/inspect/kmom.d/run.bash kmom03
+[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run --service-ports course-cli bash .dbwebb/script/inspect/kmom.d/run.bash kmom05
 >>> -------------- Start                -------------------------
->>> Running all scripts in '/home/dbwebb/repo/.dbwebb/script/inspect/kmom.d/kmom03'.
+>>> Running all scripts in '/home/dbwebb/repo/.dbwebb/script/inspect/kmom.d/kmom05'.
 
->>> -------------- 10_check-lab2.bash   -------------------------
->>> Ready to begin.
->>> 1.1 CORRECT. Well done! (1p)
->>> 1.2 FAIL. (1p)
->>> You said:
+>>> -------------- 10_check-mazerunner.bash -------------------------
+[36mStarting server...
+(B[mThe maze server is now listening on: 1337
+[36mExecute mazerunner init? [Y/n] 
+(B[m
+#################
+Testing: Init
+#################
 
->>> 1.3 FAIL. (1p)
->>> You said:
-21386
->>> 1.4 CORRECT. Well done! (1p)
->>> 1.5 CORRECT. Well done! (1p)
->>> 1.6 CORRECT. Well done! (1p)
->>> 1.7 CORRECT. Well done! (1p)
->>> 1.8 CORRECT. Well done! (1p)
->>> 1.9 CORRECT. Well done! (1p)
->>> 1.10 CORRECT. Well done! (1p)
->>> 2.1 CORRECT. Well done! (3p)
->>> 2.2 CORRECT. Well done! (3p)
->>> 2.3 FAIL. (3p)
->>> You said:
-42
->>> Hint:
-43
->>> Done with status 13/10/3/0 (Total/Correct/Failed/Not done).
->>> Points earned: 14p of 19p (PASS=>10p, PASS W DISTINCTION=>19p).
-[0;32m>>> Grade: PASS! :-)[m
-Done viewing the lab?
-[0;30;42mOK[0m 10_check-lab2.bash
+Incoming route / from ip ::ffff:127.0.0.1
+Created new game with id 64777
+text,gameid
+New game initialized.,64777
 
->>> -------------- 20_check-scriptfolder.bash -------------------------
+[36mExecute mazerunner maps? [Y/n] 
+(B[m
+#################
+Testing: Maps
+#################
 
-[36m----- Check for: commands.bash, Dockerfile, dockerhub.txt -----
-(B[mtotal 12
--rw-r--r-- 1 dbwebb dbwebb   91 May 29 09:54 Dockerfile
--rwxr-xr-x 1 dbwebb dbwebb 1523 May 29 09:46 commands.bash
--rw-r--r-- 1 dbwebb dbwebb   34 May 29 12:03 dockerhub.txt
+Incoming route /map from ip ::ffff:127.0.0.1
+[ [32m'maze-of-doom.json'[39m, [32m'small-maze.json'[39m ]
+1. maze-of-doom.json
+2. small-maze.json
 
-[0;30;42mOK[0m 20_check-scriptfolder.bash
+use 'mazerunner select # to choose map'
 
->>> -------------- 99_last-check.bash   -------------------------
-[36m----- Do you want to start a bashprompt in Docker? [Y/n] ----- 
-(B[m]0;dbwebb@bf98ca874bf8: ~/repodbwebb@bf98ca874bf8:~/repo$ 
-]0;dbwebb@bf98ca874bf8: ~/repodbwebb@bf98ca874bf8:~/repo$ exit
-exit
-[0;30;42mOK[0m 99_last-check.bash
+
+[36mExecute mazerunner select 1? [Y/n] 
+(B[m
+#################
+Testing: Select
+#################
+
+Incoming route /64777/map/maze-of-doom.json from ip ::ffff:127.0.0.1
+You selected: maze-of-doom.json
+
+[36mExecute mazerunner enter? [Y/n] 
+(B[m
+#################
+Testing: Enter
+#################
+
+Incoming route /64777/maze from ip ::ffff:127.0.0.1
+You are in room: 0
+Description: You are in a dark room and you feel 2 doors in the dark dark room
+You can go to: east 1 south 3
+
+
+[36mExecute mazerunner go east? [Y/n] 
+(B[m
+#################
+Testing: Go EAST
+#################
+
+Incoming route /64777/maze/0/east from ip ::ffff:127.0.0.1
+You are in room: 1
+Description: Room 1
+You can go to: west 0 east 2 south 4
+
+
+
+[36mExecute mazerunner go east? [Y/n] 
+(B[m
+#################
+Testing: Go EAST
+#################
+
+Incoming route /64777/maze/1/east from ip ::ffff:127.0.0.1
+You are in room: 2
+Description: Room 2
+You can go to: west 1 south 5
+
+
+
+[36mExecute mazerunner go south? [Y/n] 
+(B[m
+#################
+Testing: Go SOUTH
+#################
+
+Incoming route /64777/maze/2/south from ip ::ffff:127.0.0.1
+You are in room: 5
+Description: Room 5
+You can go to: south 8 north 2
+
+
+
+[36mExecute mazerunner go south? [Y/n] 
+(B[m
+#################
+Testing: Go SOUTH
+#################
+
+Incoming route /64777/maze/5/south from ip ::ffff:127.0.0.1
+You are in room: 8
+Description: Room 8
+You can go to: west 7 south 11 north 5
+
+
+
+
+[36mExecute mazerunner go south? [Y/n] (B[m
+#################
+Testing: Go SOUTH
+#################
+
+Incoming route /64777/maze/8/south from ip ::ffff:127.0.0.1
+You are in room: 11
+Description: Room 11
+You can go to: west 10 north 8
+
+
+
+
+[36mExecute mazerunner go west? [Y/n] (B[m
+#################
+Testing: Go WEST
+#################
+
+Incoming route /64777/maze/11/west from ip ::ffff:127.0.0.1
+You are in room: 10
+Description: Room 10
+You can go to: west 9 east 11
+
+
+
+
+[36mExecute mazerunner go west? [Y/n] (B[m
+#################
+Testing: Go WEST
+#################
+
+Incoming route /64777/maze/10/west from ip ::ffff:127.0.0.1
+You are in room: 9
+Description: You found the exit
+You can go to: 
+
+
+
+
+
+[36mExecute mazerunner loop? [Y/n] (B[m
+#################
+Testing: LOOP
+#################
+
+
+[36mView mazerunner.bash? [Y/n] (B[m#!/usr/bin/env bash
+
+SERVER="localhost:1337"
+
+function init() {
+	curl -s "$SERVER?type=csv" > "gamestatus.txt"
+	cat "gamestatus.txt" | tail -1 | cut -d ',' -f2 > "gameid.txt"
+	cat "gamestatus.txt"
+}
+
+function maps() {
+	curl -s "$SERVER/map?type=csv" > "maps.txt"
+	map1=$(cat "maps.txt" | tail -1 | cut -d ',' -f1)
+	map2=$(cat "maps.txt" | tail -1 | cut -d ',' -f2)
+	echo "1. $map1"
+	echo "2. $map2"
+	echo ""
+	echo "use 'mazerunner select # to choose map'"
+	echo ""
+}
+
+function selectMap() {
+	id=$(cat "gameid.txt")
+[7m--More--(29%)[27m[K	map=$(cat "maps.txt" | tail -1 | cut -d ',' -f"$1")
+[7m--More--(32%)[27m[K	curl -s "$SERVER/$id/map/$map" > /dev/null
+[7m--More--(35%)[27m[K	echo "You selected: $map"
+[7m--More--(37%)[27m}[K
+[7m--More--(37%)[27m[K
+[7m--More--(37%)[27mfunction getAvailableRooms() {
+[7m--More--(39%)[27m[K	for val in 3 4 5 6;
+[7m--More--(40%)[27m[K	do
+[7m--More--(40%)[27m[K		temp=$(cat "info.txt" | tail -1 | cut -d ',' -f"$val")
+[7m--More--(43%)[27m[K		if [ "$temp" = "-" ];then
+[7m--More--(45%)[27m[K			continue
+[7m--More--(46%)[27m[K		else
+[7m--More--(46%)[27m[K			holder=$(cat "info.txt" | tail -2 | cut -d ',' -f"$val")
+[7m--More--(49%)[27m[K			rooms="$rooms $holder"
+[7m--More--(51%)[27m[K		fi
+[7m--More--(51%)[27m[K	done
+[7m--More--(52%)[27m[K	echo $rooms
+[7m--More--(52%)[27m}[K
+[7m--More--(52%)[27m[K
+[7m--More--(53%)[27mfunction enter() {
+[7m--More--(54%)[27m[K	id=$(cat "gameid.txt")
+[7m--More--(55%)[27m[K	if [ -z "$1" ];then
+[7m--More--(56%)[27m[K		curl -s "$SERVER/$id/maze?type=csv" > "info.txt"
+[7m--More--(59%)[27m[K	fi
+[7m--More--(59%)[27m[K	roomid=$(cat "info.txt" | tail -1 | cut -d ',' -f1)
+[7m--More--(63%)[27m[K	desc=$(cat "info.txt" | tail -1 | cut -d ',' -f2)
+[7m--More--(65%)[27m[K
+[7m--More--(66%)[27m[K	echo "You are in room: $roomid"
+[7m--More--(67%)[27m[K	echo "Description: $desc"
+[7m--More--(69%)[27m[K	echo "You can go to: $(getAvailableRooms)"
+[7m--More--(72%)[27m[K	echo ""
+[7m--More--(72%)[27m}[K
+[7m--More--(72%)[27m[K
+[7m--More--(72%)[27mfunction go() {
+[7m--More--(73%)[27m[K	id=$(cat "gameid.txt")
+[7m--More--(75%)[27m[K	currRoom=$(cat "info.txt" | tail -1 | cut -d ',' -f1)
+[7m--More--(78%)[27m[K	curl -s "$SERVER/$id/maze/$currRoom/$1?type=csv" > "info.txt"
+[7m--More--(81%)[27m[K	enter $currRoom
+[7m--More--(82%)[27m[K	echo ""
+[7m--More--(83%)[27m}[K
+[7m--More--(83%)[27m[K
+[7m--More--(83%)[27mwhile (($#))[K
+[7m--More--(84%)[27mdo[K
+[7m--More--(84%)[27m[K	case "$1" in
+[7m--More--(85%)[27m[K
+[7m--More--(85%)[27m[K		init)
+[7m--More--(85%)[27m[K			init
+[7m--More--(86%)[27m[K			shift
+[7m--More--(86%)[27m[K			exit 0
+[7m--More--(87%)[27m[K		;;
+[7m--More--(87%)[27m[K
+[7m--More--(87%)[27m[K		maps)
+[7m--More--(88%)[27m[K			maps
+[7m--More--(88%)[27m[K			shift
+[7m--More--(89%)[27m[K			exit 0
+[7m--More--(89%)[27m[K		;;
+[7m--More--(90%)[27m[K
+[7m--More--(90%)[27m[K		select)
+[7m--More--(90%)[27m[K			selectMap "$2"
+[7m--More--(91%)[27m[K			shift
+[7m--More--(92%)[27m[K			exit 0
+[7m--More--(92%)[27m[K		;;
+[7m--More--(93%)[27m[K
+[7m--More--(93%)[27m[K		enter)
+[7m--More--(93%)[27m[K			enter
+[7m--More--(94%)[27m[K			shift
+[7m--More--(94%)[27m[K			exit 0
+[7m--More--(95%)[27m[K		;;
+[7m--More--(95%)[27m[K
+[7m--More--(95%)[27m[K		go)
+[7m--More--(96%)[27m[K			go "$2"
+[7m--More--(96%)[27m[K			shift
+[7m--More--(97%)[27m[K			exit 0
+[7m--More--(97%)[27m[K		;;
+[7m--More--(98%)[27m[K
+[7m--More--(98%)[27m[K		*)
+[7m--More--(98%)[27m[K			shift
+[7m--More--(98%)[27m[K			;;
+[7m--More--(99%)[27m[K
+[7m--More--(99%)[27m[K	esac
+[7m--More--(99%)[27mdone[K
+[0;30;42mOK[0m 10_check-mazerunner.bash
+
+>>> -------------- 99_lastcheck.bash    -------------------------
+Do you want to start a bashprompt in Docker? [Y/n] n
+[0;30;42mOK[0m 99_lastcheck.bash
 
 [1;37;40mDONE[0m All scripts were executed.
 >>> -------------- Summary              -------------------------
-[0;30;42mOK[0m 10_check-lab2.bash
-[0;30;42mOK[0m 20_check-scriptfolder.bash
-[0;30;42mOK[0m 99_last-check.bash
+[0;30;42mOK[0m 10_check-mazerunner.bash
+[0;30;42mOK[0m 99_lastcheck.bash
 
 
 [0;30;42m>>> ======= Docker Run Extra (post)   =======[0m
