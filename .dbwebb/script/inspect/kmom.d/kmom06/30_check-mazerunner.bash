@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd "me/kmom06/maze2"
+cd "me/kmom06/maze2/client"
 
 tput setaf 6
 read -r -p "----- View mazerunner.bash? [Y/n] ----- " response
