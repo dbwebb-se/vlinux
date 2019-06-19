@@ -35,7 +35,12 @@ me/kmom06/maze2/client
 
 
 # kmom10
-me/kmom10/project
+me/kmom10/bthloggen
+me/kmom10/bthloggen/server
+me/kmom10/bthloggen/client
+me/kmom10/bthloggen/webbclient
+me/kmom10/bthloggen/data
+
 
 # redovisa
 me/redovisa
