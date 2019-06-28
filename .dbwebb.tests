@@ -103,16 +103,16 @@ test -d me/kmom04/client
 # node2
 # https://dbwebb.se/uppgift/linux-lab4-asynkron-programmering
 #
-dbwebb recreate node2
-node me/kmom04/node1/answer.js; [[ $? = 42 ]]
-dbwebb validate node2
+# dbwebb recreate node2
+# node me/kmom04/node1/answer.js; [[ $? = 42 ]]
+# dbwebb validate node2
 
 #
 # maze
 # https://dbwebb.se/uppgift/los-mazen-med-din-mazerunner-i-bash
 #
-touch me/kmom05/maze/mazerunnder.bash
-dbwebb validate maze
+# touch me/kmom05/maze/mazerunnder.bash
+# dbwebb validate maze
 
 
 
