@@ -3,7 +3,7 @@ Linux - linux
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mosbth/linux?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)
 [![Build Status](https://travis-ci.org/dbwebb-se/linux.svg?branch=master)](https://travis-ci.org/dbwebb-se/linux)
-[![CircleCI](https://circleci.com/gh/dbwebb-se/linux.svg?style=svg)](https://circleci.com/gh/dbwebb-se/linux)
+[![CircleCI](https://circleci.com/gh/dbwebb-se/linux.svg?style=svg)](https://circleci.com/gh/dbwebb-se/linux) [![Join the chat at https://gitter.im/dbwebb-se/vlinux](https://badges.gitter.im/dbwebb-se/vlinux.svg)](https://gitter.im/dbwebb-se/vlinux?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 Course material for linux-course, aimed at a swedish target audience as an introduction to web programming for computer science students at University level.
