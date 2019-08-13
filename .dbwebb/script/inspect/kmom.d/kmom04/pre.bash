@@ -12,7 +12,7 @@ function testServer
     tput setaf 6
     read -p "Curling localhost:8083/$1 <Press Enter>"
     tput sgr0
-    curl "localhost:8083/$1"
+    curl "http://localhost:8083/$1"
     tput setaf 6
     echo ""
     read -p "Done viewing? <Press Enter>"
