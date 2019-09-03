@@ -130,15 +130,15 @@ dbwebb validate sed1
 # https://dbwebb.se/uppgift/skapa-klienter-och-servrar-som-spelar-luffarschack-i-node-js
 #
 # client
-cp example/nodejs/gomoku/{GomokuBoard,index-random}.js me/kmom06/gomoku
-touch me/kmom06/gomoku/index-random.js
+# cp example/nodejs/gomoku/{GomokuBoard,index-random}.js me/kmom06/gomoku
+# touch me/kmom06/gomoku/index-random.js
 
 # server
-cp example/nodejs/gomoku/{GomokuServer,index-server}.js me/kmom06/gomoku
-cp example/nodejs/router/router.js me/kmom06/gomoku
+# cp example/nodejs/gomoku/{GomokuServer,index-server}.js me/kmom06/gomoku
+# cp example/nodejs/router/router.js me/kmom06/gomoku
 
 # client to server
-cp example/nodejs/gomoku/{GomokuClient,index-client}.js me/kmom06/gomoku
+# cp example/nodejs/gomoku/{GomokuClient,index-client}.js me/kmom06/gomoku
 
 
 
