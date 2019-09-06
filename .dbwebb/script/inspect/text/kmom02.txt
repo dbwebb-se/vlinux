@@ -1,6 +1,8 @@
-Kursmoment 02 klart! Delarna innefattar en config-fil som styr din virtual host, en logg-fil samt en skärmdump.
+Kursmoment 02 klart!
 
-Jag kune hitta alla delar och de har relevant innehåll.
+Delarna innefattar en config-fil som styr din virtual host, en logg-fil samt en skärmdump.
+
+Jag kunde hitta alla delar och de har relevant innehåll.
 
 Allt jag kollade på såg bra ut. Kör på.
 

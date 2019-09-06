@@ -111,8 +111,8 @@ test -d me/kmom04/client
 # maze
 # https://dbwebb.se/uppgift/los-mazen-med-din-mazerunner-i-bash
 #
-# touch me/kmom05/maze/mazerunnder.bash
-# dbwebb validate maze
+touch me/kmom05/maze/mazerunner.bash
+dbwebb validate maze
 
 
 
