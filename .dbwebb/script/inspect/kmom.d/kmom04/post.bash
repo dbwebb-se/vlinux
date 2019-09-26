@@ -2,7 +2,7 @@
 
 printf ">>> -------------- Post inspect -------------------------\n"
 
-url=$(tail -1 me/kmom04/dockerhub.txt)
+url=$(tail -1 me/kmom04/server/dockerhub.txt)
 
 cd me/kmom04/client || exit 1
 
@@ -19,7 +19,7 @@ function testClient
 {
     echo ""
     tput setaf 6
-    echo "----- Testing ./client.bash ($@) -----"
+    echo "----- Testing ./client.bash ($*) -----"
     read
     tput sgr0
 
@@ -32,12 +32,23 @@ testClient "-h"
 testClient "-v"
 testClient "all"
 testClient "color" "Yellow"
+testClient "color" "yellow"
 testClient "test" "https://dbwebb.se"
 testClient "test"
 testClient "--save" "names"
 ls -l
 
+# Look at file?
 printPause "Do you see the saved file? (Created $(date +'%b %_d'))"
+tput setaf 6
+read -r -p "----- Do you want to look at data-file? [y/N] ----- " response
+tput sgr0
+
+if [ "$response" = "y" ]
+then
+    more *.data
+fi
+
 
 # Look at file?
 tput setaf 6

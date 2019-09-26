@@ -1,1 +1,7 @@
-Jag testade både labben och de olika routesen och din inlämning är helt i sin ordning och fungerar fint.
+Hej,
+
+Jag har startat din container och testat den både via webbläsaren och via ditt script. Alla routes fungerar fint. Jag hoppas kursmomentet har gett en liten inblick i hur man kan konstruera ett server/klient förhållande med hjälp av Docker och Bash.
+
+Väl jobbat med kursmomentet! Kör så det ryker med Docker och nätverk.
+
+$TEACHER_SIGNATURE

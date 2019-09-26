@@ -2,17 +2,21 @@
 
 printf ">>> -------------- Pre inspect -------------------------\n"
 
-port=$(head -1 me/kmom04/dockerhub.txt)
-url=$(tail -1 me/kmom04/dockerhub.txt)
+port=$(cat me/kmom04/server/dockerhub.txt | head -n1 | sed 's/.*\([0-9]\{4\}\).*/\1/')
+url=$(tail -1 me/kmom04/server/dockerhub.txt)
 
-dockerId=$(docker run --rm --name testKmom04 -d -p 8083:"$port" -it -v $(pwd)/example/json/:/var/www/html/data/ "$url")
+echo "Using port: $port"
+echo "Docker image: $url"
+read -p "Lets go!"
+
+dockerId=$(docker run --rm --name testKmom04 -d -p "$port":"$port" -it -v "$(pwd)"/example/json/:/var/www/html/data/ "$url")
 
 function testServer
 {
     tput setaf 6
-    read -p "Curling localhost:8083/$1 <Press Enter>"
+    read -p "Curling localhost:$port/$1 <Press Enter>"
     tput sgr0
-    curl "http://localhost:8083/$1"
+    curl "http://localhost:$port/$1"
     tput setaf 6
     echo ""
     read -p "Done viewing? <Press Enter>"
@@ -22,9 +26,9 @@ function testServer
 testServer "all"
 testServer "names"
 testServer "color/Yellow"
+testServer "color/yellow"
 
-
-eval "$BROWSER" "localhost:8083/all" &
+eval "$BROWSER" "http://localhost:$port/all" &
 
 tput setaf 6
 read -p "Done with viewing browser? <Press Enter>"
