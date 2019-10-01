@@ -7,9 +7,34 @@ url=$(tail -1 me/kmom04/server/dockerhub.txt)
 
 echo "Using port: $port"
 echo "Docker image: $url"
-read -p "Lets go!"
+read -p "Lets go! <press key>"
 
-dockerId=$(docker run --rm --name testKmom04 -d -p "$port":"$port" -it -v "$(pwd)"/example/json/:/var/www/html/data/ "$url")
+function menu
+{
+    local language
+
+    read -p "Server type? 1) /var/www/html, 2) /app/data/, 3) /data/, 4) /server/data/: " lang
+
+    if [[ "$lang" = "1" ]]; then
+        language="/var/www/html/data/"
+    elif [[ "$lang" = "2" ]]; then
+        language="/app/data/"
+    elif [[ "$lang" = "3" ]]; then
+        language="/data/"
+    elif [[ "$lang" = "4" ]]; then
+        language="/server/data/"
+    fi
+
+    echo "$language"
+}
+
+lang=$(menu)
+
+tput setaf 7
+echo "Going with: $lang"
+tput sgr0
+
+dockerId=$(docker run --rm --name kmom04 -d -p "$port":"$port" -it -v "$(pwd)"/example/json/:"$lang" "$url")
 
 function testServer
 {

@@ -20,12 +20,12 @@ function testClient
     echo ""
     tput setaf 6
     echo "----- Testing ./client.bash ($*) -----"
-    read
+    read -p "GO!"
     tput sgr0
 
     ./client.bash "$@"
 
-    printPause "Done?"
+    # printPause "Done?"
 }
 
 testClient "-h"
@@ -35,6 +35,7 @@ testClient "color" "Yellow"
 testClient "color" "yellow"
 testClient "test" "https://dbwebb.se"
 testClient "test"
+testClient "test" "http://faultysup3rwebpage.com"
 testClient "--save" "names"
 ls -l
 
@@ -63,7 +64,7 @@ fi
 printf ">>> -------------- Clean up -------------------------\n"
 
 echo "Killing container!"
-docker kill "testKmom04"
+docker kill "kmom04"
 
 echo "Removing image: $url"
 docker image rm --force "$url"
