@@ -31,7 +31,7 @@ then
 fi
 
 executeDockerCompose "docker-compose up -d server"
-executeDockerCompose "docker-compose run client"
+executeDockerCompose "docker-compose run client bash"
 executeDockerCompose "docker-compose down"
 
 

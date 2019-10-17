@@ -42,5 +42,5 @@ tput sgr0
 
 if [ ! "$response" = "n" ]
 then
-    cd "$path" && ./kmom05.bash
+    cd "$path" && chmod +x kmom05.bash && ./kmom05.bash
 fi

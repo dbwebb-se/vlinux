@@ -7,7 +7,7 @@
 #
 
 # Teacher signature used in feedback text
-export DBWEBB_TEACHER_SIGNATURE="// Kenneth (klw@bth.se)"
+export DBWEBB_TEACHER_SIGNATURE="// Kenneth"
 
 
 

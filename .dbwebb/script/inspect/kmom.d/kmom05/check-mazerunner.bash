@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 cd me/kmom05/maze
-userserver=$(sed -En 's/.*\-\-name ([a-zA-Z0-9]+).*/\1/p' < kmom05.bash | head -1)
+#userserver=$(sed -En 's/.*\-\-name ([a-zA-Z0-9]+).*/\1/p' < kmom05.bash | head -1)
 cd client
-cp mazerunner.bash mazerunner.backup
-sed -i -E "s/$userserver/localhost/g" mazerunner.bash
+#cp mazerunner.bash mazerunner.backup
+#sed -i -E "s/$userserver/localhost/g" mazerunner.bash
 
 function testMaze {
     tput setaf 6
@@ -24,7 +24,7 @@ function testMaze {
         sleep 1
     fi
 }
-
+docker network create dbwebb
 # Start server
 tput setaf 6
 echo "Starting server..."
@@ -63,6 +63,7 @@ then
     more mazerunner.bash
 fi
 
+docker network remove dbwebb
 
 # Kill server
 # echo ""
