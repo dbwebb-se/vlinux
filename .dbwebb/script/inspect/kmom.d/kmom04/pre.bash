@@ -8,9 +8,10 @@ url=$(cat me/kmom04/server/dockerhub.txt | head -n2 | tail -n1)
 echo "Using port: $port"
 echo "Docker image: $url"
 read -p "Lets go! <press key>"
-#
-# port="1337"
-# url="lyco18/vlinux-server:latest"
+
+# port=""
+# url=""
+
 function menu
 {
     local language
