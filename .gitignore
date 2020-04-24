@@ -9,3 +9,4 @@ log-gui-inspect.ansi
 log-gui-main.ansi
 # Mac
 .DS_Store
+example/proj/gdpr.bash
