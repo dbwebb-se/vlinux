@@ -1,4 +1,6 @@
-Jag hoppas installationen av VirtualBox gick bra och att du fått igång Guest Additions. Skärmdumpen finns på plats och jag har även tittat på din logg-fil och den innehåller de delarna som är tänkt.
+Tjenare,
+
+Vad bra att labbmiljön är på plats, både VirtualBox och Guest Additions. Skärmdumpen finns på plats och jag har även tittat på din logg-fil och den innehåller de delarna som är tänkt.
 
 Jag kollade igenom din redovisningstext och den är välskriven och reflekterande.
 

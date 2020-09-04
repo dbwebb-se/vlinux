@@ -100,12 +100,12 @@ test -d me/kmom04/client
 #
 
 #
-# node2
-# https://dbwebb.se/uppgift/linux-lab4-asynkron-programmering
+# regex
 #
-# dbwebb recreate node2
-# node me/kmom04/node1/answer.js; [[ $? = 42 ]]
-# dbwebb validate node2
+#
+cd me/kmom05 && dbwebb recreate regex
+cd me/kmom05/regex && ./answer.bash; [[ $? = 42 ]]
+dbwebb validate regex
 
 #
 # maze
