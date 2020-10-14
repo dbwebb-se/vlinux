@@ -3,7 +3,7 @@
 printf ">>> -------------- Pre inspect -------------------------\n"
 
 port=$(cat me/kmom04/server/dockerhub.txt | head -n1 | sed 's/.*\([0-9]\{4\}\).*/\1/')
-url=$(cat me/kmom04/server/dockerhub.txt | head -n2 | tail -n1 | sed -E -n 's/^.*\s([a-zA-Z0-9]+[/][a-zA-Z0-9\-]+[:][a-z0-9]+).*$/\1/p')
+url=$(cat me/kmom04/server/dockerhub.txt | head -n2 | tail -n1 | rev | sed -E -n 's/^\s?([a-zA-Z0-9]+[:][a-zA-Z0-9\-]+[/][a-zA-Z0-9]+).*/\1/p' | rev)
 
 
 echo "Using port: $port"
