@@ -1,0 +1,18 @@
+
+[0;30;42m>>> ======= GUI Inspect               =======[0m
+tis 13 apr 2021 11:13:32 CEST
+vlinux kmom04 abra19
+download, docker
+Inspect GUI v2.5.1 (2020-11-30)
+
+[0;30;42m>>> ======= Download (and potato)     =======[0m
+Doing a silent download, potatoe if needed.
+
+[0;30;42m>>> ======= Pre kmom04                =======[0m
+>>> -------------- Pre (all kmoms) ----------------------
+http://www.student.bth.se/~abra19/dbwebb-kurser/vlinux/me/redovisa
+
+>>> -------------- Pre inspect -------------------------
+Using port: 1337
+Docker image: abberadhi/vlinux-server:latest
+Lets go! <press key>Server type? 1) /var/www/html, 2) /app/data/, 3) /data/, 4) /server/data/: 

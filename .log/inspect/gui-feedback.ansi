@@ -1,0 +1,11 @@
+
+[0;30;42m>>> ======= Feedback                  =======[0m
+
+Hej,
+
+Jag har startat din container och testat den både via webbläsaren och via ditt script. Alla routes fungerar fint och scriptet gör precis vad som förväntas. Jag hoppas kursmomentet har gett en liten inblick i hur man kan konstruera ett server/klient förhållande med hjälp av Docker och Bash.
+
+Väl jobbat med kursmomentet! Kör så det ryker med Docker och nätverk.
+
+// Kenneth (klw@bth.se)
+
