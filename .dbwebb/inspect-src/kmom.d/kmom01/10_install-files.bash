@@ -5,8 +5,11 @@ green=$(tput setaf 2)
 cyan=$(tput setaf 6)
 normal=$(tput sgr 0)
 
+cd me/kmom01/install || exit 1
+
 function printthisfile
 {
+
     printf "\n${cyan}"
     more "$1"
     printf "${normal}\n"
@@ -17,15 +20,11 @@ function printerror
     printf "${red} $1 '%s'\n ${normal}" "$2"
 }
 
-cd me/kmom04/server || exit 1
+echo "[$ACRONYM] Check for ssh.png and log.txt"
 
-# echo ""
-# tput setaf 6
-echo "[$ACRONYM] Check for Dockerfile, dockerhub.txt"
-# tput sgr0
 files=(
-    "Dockerfile"
-    "dockerhub.txt"
+    "ssh.png"
+    "log.txt"
 )
 
 success=0
@@ -34,8 +33,11 @@ for path in "${files[@]}"; do
         printerror "Missing file" "$path"
         success=1
     fi
+    ls -al
 done
 
-ls -al
+if [[ $success -eq 0 ]]; then
+    printthisfile "log.txt"
+fi
 
 exit $success

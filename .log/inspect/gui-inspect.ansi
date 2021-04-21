@@ -1,12 +1,8 @@
 [32;01m--->   Run container= with what= one off command.[0m
-[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run  cli make inspect what=kmom02 options='--yes'
-Pulling cli (dbwebb/courserepo:)...
-latest: Pulling from dbwebb/courserepo
-Digest: sha256:3f297d08522cdc2c8a47760e8d4dfbcfea352e7c7a300195aea40649efcb3a76
-Status: Downloaded newer image for dbwebb/courserepo:latest
-Creating vlinux-new_cli_run ... 
-[1A[2KCreating vlinux-new_cli_run ... [32mdone[0m[1B[32;01m--->   Execute dbwebb inspect what=kmom01.[0m
-env PATH='/home/dbwebb/repo/bin:/home/dbwebb/repo/vendor/bin:/home/dbwebb/repo/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' bin/dbwebb-inspect --yes . kmom02
+[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run  cli make inspect what=kmom06 options='--yes'
+Creating vlinux_cli_run ... 
+[1A[2KCreating vlinux_cli_run ... [32mdone[0m[1B[32;01m--->   Execute dbwebb inspect what=kmom01.[0m
+env PATH='/home/dbwebb/repo/bin:/home/dbwebb/repo/vendor/bin:/home/dbwebb/repo/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' bin/dbwebb-inspect --yes . kmom06
 env: 'bin/dbwebb-inspect': No such file or directory
 make: *** [Makefile:316: dbwebb-inspect] Error 127
 make: *** [Makefile:384: docker-run] Error 2

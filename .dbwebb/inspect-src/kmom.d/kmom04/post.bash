@@ -1,31 +1,25 @@
 #!/usr/bin/env bash
 
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+cyan=$(tput setaf 6)
+normal=$(tput sgr 0)
+
 printf ">>> -------------- Post inspect -------------------------\n"
 
-url=$(tail -1 me/kmom04/server/dockerhub.txt)
+# PORT="${DBWEBB_PORT:-1337}"
+export DBWEBB_PORT="1335"
+student_docker=$(cat me/kmom04/server/dockerhub.txt | head -n2 | tail -n1 | rev | sed -E -n 's/^\s?([a-zA-Z0-9]+[:][a-zA-Z0-9\-]+[/][a-zA-Z0-9]+).*/\1/p' | rev)
 
 cd me/kmom04/client || exit 1
 
-function printPause
-{
-    echo ""
-    tput setaf 6
-    read -p "$1 <Press Enter>"
-    tput sgr0
-    echo ""
-}
-
 function testClient
 {
-    echo ""
-    tput setaf 6
-    echo "----- Testing ./client.bash ($*) -----"
-    read -p "GO!"
-    tput sgr0
+    printf "${cyan}\n"
+    read -p "Testing ./client.bash ($*)"
+    printf "${normal}\n"
 
     ./client.bash "$@"
-
-    # printPause "Done?"
 }
 
 testClient "-h"
@@ -39,32 +33,28 @@ testClient "test" "http://faultysup3rwebpage.com"
 testClient "--save" "names"
 ls -l
 
-# Look at file?
-printPause "Do you see the saved file? (Created $(date +'%b %_d'))"
-tput setaf 6
-read -r -p "----- Do you want to look at data-file? [y/N] ----- " response
-tput sgr0
+read -p "Do you see the saved file? (Created $(date +'%b %_d'))"
 
-if [ "$response" = "y" ]
-then
+printf "${cyan}"
+read -r -p "Do you want to look at data-file? [y/N] " response
+printf "${normal}"
+
+if [[ "$response" = "y" ]]; then
     more *.data
 fi
 
+printf "${cyan}"
+read -r -p "Do you want to look at client.bash? [y/N] " response
+printf "${normal}"
 
-# Look at file?
-tput setaf 6
-read -r -p "----- Do you want to look at client.bash? [y/N] ----- " response
-tput sgr0
-
-if [ "$response" = "y" ]
-then
+if [[ "$response" = "y" ]]; then
     more client.bash
 fi
 
-printf ">>> -------------- Clean up -------------------------\n"
+printf "${cyan}>>> -------------- Clean up -------------------------\n${normal}"
 
-echo "Killing container!"
+printf "%s\n" "Killing container!"
 docker kill "kmom04"
 
-echo "Removing image: $url"
-docker image rm --force "$url"
+read -p "Press any key to delete the image."
+docker rmi -f "$student_docker"

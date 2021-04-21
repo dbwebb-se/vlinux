@@ -5,6 +5,9 @@ green=$(tput setaf 2)
 cyan=$(tput setaf 6)
 normal=$(tput sgr 0)
 
+e() { exit; }; export -f e
+f() { exit 1; }; export -f f
+
 function printthisfile
 {
     printf "\n${cyan}"
@@ -17,15 +20,14 @@ function printerror
     printf "${red} $1 '%s'\n ${normal}" "$2"
 }
 
-cd me/kmom04/server || exit 1
+cd me/kmom02/vhost || exit 1
 
-# echo ""
-# tput setaf 6
-echo "[$ACRONYM] Check for Dockerfile, dockerhub.txt"
-# tput sgr0
+echo "[$ACRONYM] Check for dump.png, log.txt and me.linux.se.conf"
+
 files=(
-    "Dockerfile"
-    "dockerhub.txt"
+    "dump.png"
+    "log.txt"
+    "me.linux.se.conf"
 )
 
 success=0
@@ -34,8 +36,7 @@ for path in "${files[@]}"; do
         printerror "Missing file" "$path"
         success=1
     fi
+    ls -al
 done
-
-ls -al
 
 exit $success

@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-read -r -p "Do you want to start a bashprompt in Docker? [Y/n] " response
+cd me || exit
 
-if [ ! "$response" = "n" ]
-then
-    bash
-fi
+e() { exit; }; export -f e
+
+echo "Do manual stuff, if needed (write e/exit to exit)?"
+ls
+bash

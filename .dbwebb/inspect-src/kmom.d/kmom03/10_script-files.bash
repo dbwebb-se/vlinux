@@ -17,13 +17,12 @@ function printerror
     printf "${red} $1 '%s'\n ${normal}" "$2"
 }
 
-cd me/kmom04/server || exit 1
+cd me/kmom03/script || exit 1
 
-# echo ""
-# tput setaf 6
-echo "[$ACRONYM] Check for Dockerfile, dockerhub.txt"
-# tput sgr0
+echo "[$ACRONYM] Check for commands.bash, Dockerfile, dockerhub.txt"
+
 files=(
+    "commands.bash"
     "Dockerfile"
     "dockerhub.txt"
 )

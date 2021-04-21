@@ -1,55 +1,35 @@
 #!/usr/bin/env bash
 
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+cyan=$(tput setaf 6)
+normal=$(tput sgr 0)
+
 printf ">>> -------------- Pre inspect -------------------------\n"
 
+localport="1335"
 port=$(cat me/kmom04/server/dockerhub.txt | head -n1 | sed 's/.*\([0-9]\{4\}\).*/\1/')
-url=$(cat me/kmom04/server/dockerhub.txt | head -n2 | tail -n1 | rev | sed -E -n 's/^\s?([a-zA-Z0-9]+[:][a-zA-Z0-9\-]+[/][a-zA-Z0-9]+).*/\1/p' | rev)
+student_docker=$(cat me/kmom04/server/dockerhub.txt | head -n2 | tail -n1 | rev | sed -E -n 's/^\s?([a-zA-Z0-9]+[:][a-zA-Z0-9\-]+[/][a-zA-Z0-9]+).*/\1/p' | rev)
 
+printf "%s ${cyan}%s${normal}\n" "Using port:" "$localport:$port"
+printf "%s ${cyan}%s${normal}\n" "Docker image:" "$student_docker"
 
-echo "Using port: $port"
-echo "Docker image: $url"
-read -p "Lets go! <press key>"
+read -p "Press any key to move on."
 
-# port=""
-# url=""
-
-function menu
-{
-    local language
-
-    read -p "Server type? 1) /var/www/html, 2) /app/data/, 3) /data/, 4) /server/data/: " lang
-
-    if [[ "$lang" = "1" ]]; then
-        language="/var/www/html/data/"
-    elif [[ "$lang" = "2" ]]; then
-        language="/app/data/"
-    elif [[ "$lang" = "3" ]]; then
-        language="/data/"
-    elif [[ "$lang" = "4" ]]; then
-        language="/server/data/"
-    fi
-
-    echo "$language"
-}
-
-lang=$(menu)
-
-tput setaf 7
-echo "Going with: $lang"
-tput sgr0
-
-dockerId=$(docker run --rm --name kmom04 -d -p "$port":"$port" -it -v "$(pwd)"/example/json/:"$lang" "$url")
+docker run --rm --name kmom04 -d -p "$localport":"$port" -it -v "$(pwd)"/example/json/:"/server/data/" "$student_docker"
 
 function testServer
 {
-    tput setaf 6
-    read -p "Curling localhost:$port/$1 <Press Enter>"
-    tput sgr0
-    curl "http://localhost:$port/$1"
-    tput setaf 6
-    echo ""
-    read -p "Done viewing? <Press Enter>"
-    tput sgr0
+    printf "${cyan}\n\n"
+    read -p "Curling localhost:$localport/$1"
+
+    printf "${normal}\n"
+
+    curl "http://localhost:$localport/$1"
+    # tput setaf 6
+    # echo ""
+    # # read -p "Done viewing? <Press Enter>"
+    # tput sgr0
 }
 
 testServer "all"
@@ -57,10 +37,10 @@ testServer "names"
 testServer "color/Yellow"
 testServer "color/yellow"
 
-eval "$BROWSER" "http://localhost:$port/all" &
+eval "$BROWSER" "http://localhost:$localport/all" &
 
-tput setaf 6
-read -p "Done with viewing browser? <Press Enter>"
-tput sgr0
+printf "${cyan}\n\n"
+read -p "[CHECK BROWSER] Press any key to continue."
+printf "${normal}"
 
 # docker kill "$dockerId"

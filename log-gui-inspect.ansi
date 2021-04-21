@@ -1,5 +1,0 @@
-[32;01m--->   Run container= with what= one off command.[0m
-[ ! -f docker-compose.yaml ] || docker-compose -f docker-compose.yaml run  cli make inspect what=kmom05 options='--yes'
-No such service: cli
-Makefile:383: recipe for target 'docker-run' failed
-make: *** [docker-run] Error 1

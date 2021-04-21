@@ -1,0 +1,5 @@
+Dina filer ligger inte på rätt plats. I nästa inlämning bör du strukturera filerna enligt instruktionerna, för att slippa onödiga kompletteringar.
+
+FIX. Det saknas en skärmdump, "ssh.png". Vänligen lägg till den i mappen och lämna in igen.
+
+FIX. Det saknas en loggfil, "logg.txt". Vänligen lägg till den i mappen och lämna in igen.

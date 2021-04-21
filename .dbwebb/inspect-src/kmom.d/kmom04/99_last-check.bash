@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
+#
+# Script run for specific kmom (within docker).
+#
+# Available (and usable) data:
+#   $KMOM
+#   $ACRONYM
+#   $COURSE_REPO
+#
 
-tput setaf 6
-read -r -p "----- Do you want to start a bashprompt in Docker? [y/N] ----- " response
-tput sgr0
+cd me || exit
 
-if [ "$response" = "y" ]
-then
-    bash
-fi
+e() { exit; }; export -f e
+
+echo "Do manual stuff, if needed (write e/exit to exit)?"
+ls
+bash
