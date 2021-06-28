@@ -8,8 +8,7 @@ function executeDockerCompose
     read -r -p "----- Execute $@? [Y/n] ----- " response
     tput sgr0
 
-    if [ ! "$response" = "n" ]
-    then
+    if [[ ! "$response" = "n" ]]; then
         eval "$@"
     fi
 }
@@ -20,8 +19,7 @@ tput sgr0
 
 file=""
 
-if [ ! "$response" = "n" ]
-then
+if [[ ! "$response" = "n" ]]; then
     if [[ -f "docker-compose.yml" ]]; then
         file="docker-compose.yml"
     else
@@ -40,8 +38,7 @@ read -r -p "----- Run log2json.bash? [Y/n] ----- " response
 tput sgr0
 
 
-if [ ! "$response" = "n" ]
-then
+if [[ ! "$response" = "n" ]]; then
     rm data/log.json
     ./log2json.bash
     ls -alh data/
