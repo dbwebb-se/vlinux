@@ -38,6 +38,7 @@ for path in "${files[@]}"; do
         read -p "View content of: $path? [y/N] " answer
         if [[ "$answer" = "y" ]]; then
             printthisfile "$path"
+            read -p "Done?"
         fi
     else
         printerror "Missing file" "$path"

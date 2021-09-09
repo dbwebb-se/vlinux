@@ -31,12 +31,12 @@ files=(
 )
 
 success=0
+ls -al
 for path in "${files[@]}"; do
     if [[ ! -f $path ]]; then
         printerror "Missing file" "$path"
         success=1
     fi
-    ls -al
 done
 
 exit $success
