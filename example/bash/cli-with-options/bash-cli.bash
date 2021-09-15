@@ -37,7 +37,7 @@ function usage
 "  --version, -h  Print version."
     )
 
-    printf "%s\n" "${txt[@]}"
+    printf "%s\\n" "${txt[@]}"
 }
 
 
@@ -53,9 +53,9 @@ function badUsage
 "$SCRIPT --help"
     )
 
-    [[ -n $message ]] && printf "%s\n" "$message"
+    [[ -n $message ]] && printf "%s\\n" "$message"
 
-    printf "%s\n" "${txt[@]}"
+    printf "%s\\n" "${txt[@]}"
 }
 
 
@@ -69,7 +69,7 @@ function version
 "$SCRIPT version $VERSION"
     )
 
-    printf "%s\n" "${txt[@]}"
+    printf "%s\\n" "${txt[@]}"
 }
 
 
