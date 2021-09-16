@@ -1,6 +1,7 @@
 me/
 bin/
 build/
+.log/inspect/*
 node_modules
 package-lock.json
 inspect.log
