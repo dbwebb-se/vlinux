@@ -103,9 +103,9 @@ function sendResponse(resObj, content, code = 200, type = "json") {
  * @type {[type]}
  */
 function checkIfGameIsActive(res, type, gameid) {
-    if (!(games[gameid] !== undefined &&
-        games[gameid].currentMap !== undefined &&
-        games[gameid].currentMap !== null)
+    if (games[gameid] === undefined ||
+        games[gameid].currentMap === undefined ||
+        games[gameid].currentMap === null
     ) {
         sendResponse(res, {
             "text": "Gameid not initialized correctly.",
