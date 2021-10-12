@@ -1,8 +1,8 @@
 Då kör vi kmom06!
 
-Jag har kikat på din labb vilken var helt ok. Jag startade dina images via docker-compose olika services och det flöt på bra och din spel-loop gör vad den ska enligt instruktionerna.
+Jag har tittat på dina Awk script och din uppdaterade mazerunner.
 
-Jag hoppas du fått en liten inblick i reguljära uttryck, även fast det kanske hade behövt mer tid än ett kursmoment.
+Awk uppgiften var ny för i år och den har du löst utmärkt. Jag startade dina images via docker-compose olika services och det flöt på bra och din spel-loop gör vad den ska enligt instruktionerna.
 
 Bra genomfört moment och lycka till med projektet!
 
