@@ -3,8 +3,9 @@
 . "functions.bash"
 
 declare -a files=(
-    "install/log.txt"
-    "install/ssh.png"
+    "cal.png"
+    "info.txt"
+    "answers"
     )
 
 # Print the header for the testsuite
