@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
-normal=$(tput sgr 0)
+
 
 echo "Running dbwebb test kmom01"
 

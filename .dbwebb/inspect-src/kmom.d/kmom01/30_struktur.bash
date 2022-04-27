@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
-normal=$(tput sgr 0)
-
-filename="me/kmom01/ex2/answers"
+filename="me/kmom01/structure/answers"
 
 echo "Checking exercise 2: 'Struktur'."
 
@@ -17,9 +12,9 @@ echo "Checking exercise 2: 'Struktur'."
 function printthisfile
 {
 
-    printf "\n${cyan}"
+    printf "\n${CYAN}"
     more "$1"
-    printf "${normal}\n"
+    printf "${NORMAL}\n"
 }
 #
 # function printerror
@@ -47,11 +42,15 @@ function printthisfile
 printthisfile "$filename"
 read -p "Done with viewing file?"
 
-rsync -avq --exclude="answers" example/structure/* me/kmom01/ex2/
+rsync -avq --exclude="answers" example/structure/* me/kmom01/structure/
 # cp -r example/structure/!(answers) "me/kmom01/ex2/"
 # mv "$filename" "me/kmom01/structure/"
-cd "me/kmom01/ex2" || exit 1
+cd "me/kmom01/structure" || exit 1
+
+printf "${YELLOW}"
 bash answers && tree .
+printf "${NORMAL}"
+
 # ls -al
 # pwd
 # fi

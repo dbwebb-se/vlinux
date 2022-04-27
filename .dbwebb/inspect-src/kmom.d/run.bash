@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 #
+# Export colors
+#
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+CYAN=$(tput setaf 6)
+YELLOW=$(tput setaf 3)
+NORMAL=$(tput sgr 0)
+export RED
+export GREEN
+export CYAN
+export YELLOW
+export NORMAL
+#
 # Execute all scripts in a subdirectory
 #
 

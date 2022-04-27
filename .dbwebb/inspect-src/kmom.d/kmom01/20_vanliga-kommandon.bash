@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
-normal=$(tput sgr 0)
-
-filename="me/kmom01/ex1/info.txt"
+filename="me/kmom01/commands/info.txt"
 
 echo "Checking exercise 1: 'vanliga kommandon'."
 echo "Do not forget to look at the screenshot!"
@@ -18,9 +13,9 @@ echo "Do not forget to look at the screenshot!"
 function printthisfile
 {
 
-    printf "\n${cyan}"
+    printf "\n${YELLOW}"
     more "$1"
-    printf "${normal}\n"
+    printf "${NORMAL}\n"
 }
 #
 # function printerror
@@ -28,30 +23,16 @@ function printthisfile
 #     printf "${red} $1 '%s'\n ${normal}" "$2"
 # }
 #
-# echo "[$ACRONYM] Check for ssh.png and log.txt"
-#
-# files=(
-#     "ssh.png"
-#     "log.txt"
-# )
-#
-# success=0
-# for path in "${files[@]}"; do
-#     if [[ ! -f $path ]]; then
-#         printerror "Missing file" "$path"
-#         success=1
-#     fi
-#     ls -al
-# done
-#
-# if [[ $success -eq 0 ]]; then
+
 printthisfile "$filename"
+
+printf "\n${CYAN}"
 while read com; do
 
     eval "$com"
 
 done < "$filename"
-# fi
-#
-# exit $success
-read -p "Next exercise!"
+printf "\n${NORMAL}"
+
+
+read -p "\nNext exercise!"
