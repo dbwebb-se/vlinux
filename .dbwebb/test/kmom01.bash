@@ -3,9 +3,9 @@
 . "functions.bash"
 
 declare -a files=(
-    "cal.png"
-    "info.txt"
-    "answers"
+    "commands/cal.png"
+    "commands/info.txt"
+    "structure/answers"
     )
 
 # Print the header for the testsuite

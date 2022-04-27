@@ -5,12 +5,13 @@
 #
 
 # kmom01
-me/kmom01/ex1
-me/kmom01/ex2
+me/kmom01/commands
+me/kmom01/structure
 
 # kmom02
+me/kmom02/ex1
+me/kmom02/ex2
 me/kmom02/bash1
-me/kmom02/vhost
 
 # kmom03
 me/kmom03/bash2
