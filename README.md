@@ -8,7 +8,7 @@ Linux - linux
 
 Course material for linux-course, aimed at a swedish target audience as an introduction to web programming for computer science students at University level.
 
-Relased as part of a University course: https://dbwebb.se/kurser/linux
+Relased as part of a University course: https://dbwebb.se/kurser/vlinux
 
 The course repo is managed by a [dbwebb command line utility](https://dbwebb.se/dbwebb-cli).
 
@@ -27,5 +27,5 @@ Feel free to help building up the repository with more content suited for traini
 
 ```
  .
-..:  Copyright (c) 2015-2018 dbwebb et al, info@dbwebb.se
+..:  Copyright (c) 2015-2022 dbwebb et al, info@dbwebb.se
 ```
