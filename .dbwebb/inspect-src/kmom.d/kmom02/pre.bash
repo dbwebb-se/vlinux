@@ -12,6 +12,14 @@ function printthisfile
     printf "${normal}\n"
 }
 
+printf ">>> -------------- dbwebb test kmom02 -------------------------\n"
+
+dbwebb test "kmom02"
+
+read -p "Press any key to continue."
+
+
+
 printf ">>> -------------- Pre inspect -------------------------\n"
 
 cd me/kmom02/script || exit 1
@@ -31,7 +39,7 @@ bash dockerhub.bash
 
 read -p "Press any key to delete the image."
 
-docker images -a |  grep "vlinux-commands" | awk '{print $3}' | xargs docker rmi
+docker images -a |  grep "vlinux-commands" | awk '{print $3}' | xargs docker rmi -f
 
 # if [[ -f  "dockerhub.txt" ]]; then
 #     url=""
