@@ -4,9 +4,9 @@
 
 declare -a files=(
     "bash1/answer.bash"
-    "script/commands.bash"
-    "script/Dockerfile"
-    "script/dockerhub.bash"
+    "vhost/dump.png"
+    "vhost/me.linux.se.conf"
+    "vhost/log.txt"
     )
 
 # Print the header for the testsuite
