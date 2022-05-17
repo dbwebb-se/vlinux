@@ -24,13 +24,17 @@ fi
 
 read -p "Press any key to execute dockerhub.bash"
 
-mkdir "mysite"
-touch "mysite/index.html"
-echo "<h1>Det magiska scriptet säger att allt är ok.</h1>" > "mysite/index.html"
+mkdir "klwtest"
+touch "klwtest/index.html"
+echo "<h1>The magic script says everything is ok.</h1>" > "klwtest/index.html"
+date >> "klwtest/index.html"
+
 
 chmod +x dockerhub.bash
-bash dockerhub.bash
+bash dockerhub.bash klwtest
 
-read -p "Press any key to delete the image."
+eval "$BROWSER" "http://mysite.vlinux.se:8085" &
 
-docker images -a |  grep "vlinux-vhost" | awk '{print $3}' | xargs docker rmi -f
+# read -p "Press any key to delete the image."
+#
+# docker images -a |  grep "vlinux-vhost" | awk '{print $3}' | xargs docker rmi -f
