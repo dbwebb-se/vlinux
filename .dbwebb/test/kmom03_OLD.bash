@@ -4,10 +4,8 @@
 
 declare -a files=(
     "bash2/answer.bash"
-    "vhosts/dump.png"
-    "vhosts/Dockerfile"
-    "vhosts/me.linux.se.conf"
-    "vhosts/dockerhub.bash"
+    "script/commands.bash"
+    "script/dockerhub.txt"
     )
 
 # Print the header for the testsuite
@@ -15,5 +13,6 @@ header "$1" "$2" "$3"
 
 # CHeck if the files exists and have correct filename
 checkIfFilesExist "${files[@]}"
+checkDockerHubLines "script/" "1"
 
 exit "$(isSuccess)"
