@@ -26,7 +26,7 @@ read -p "Press any key to execute dockerhub.bash"
 
 mkdir "mysite"
 touch "mysite/index.html"
-echo "<h1>Kenneths magiska script säger att allt är ok.</h1>" > "mysite/index.html"
+echo "<h1>Det magiska scriptet säger att allt är ok.</h1>" > "mysite/index.html"
 
 chmod +x dockerhub.bash
 bash dockerhub.bash
