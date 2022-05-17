@@ -6,7 +6,7 @@ declare -a files=(
     "bash2/answer.bash"
     "vhosts/dump.png"
     "vhosts/Dockerfile"
-    "vhosts/me.linux.se.conf"
+    "vhosts/mysite.vlinux.se.conf"
     "vhosts/dockerhub.bash"
     )
 
