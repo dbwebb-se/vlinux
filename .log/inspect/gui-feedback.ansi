@@ -1,19 +1,13 @@
 
 [0;30;42m>>> ======= Feedback                  =======[0m
 
-Projektet klart!
+Kursmoment 02 klart!
 
-Jag har tittat igenom din redovisningsvideo. Jag tycker du förklarar bra hur du tänkt och det märks att du har kontroll över uppgifterna.
+Delarna innefattar en labb, en config-fil som styr din virtual host, en logg-fil samt en skärmdump.
 
-Du förklarar även de implementerade kraven bra i din text.
+Jag kunde hitta alla delar och de har relevant innehåll. Bra att du använder en config-fil med variabler. Det underlättar skapandet av fler virtuella hostar.
 
-Den implementerade funktionaliteten funkar bra och alla delarna är på plats. Det gick fort att skapa log.json så du har effektiva regex-uttryck!
-
-Jag hoppas du har fått en inblick i linux som operativsystem och hur man kan använda virtualisering/containerisering vid utveckling av applikationer.
-
-Ta gärna 2 minuter och svara på kursvärderingen som följer upp kursen. Den hjälper mig att göra kursen bättre framöver.
-
-Grattis till ännu en avklarad kurs!
+Allt jag kollade på såg bra ut. Kör på.
 
 // Kenneth (klw@bth.se)
 

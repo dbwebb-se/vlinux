@@ -1,50 +1,88 @@
 
 [0;30;42m>>> ======= GUI Inspect               =======[0m
-Fri Jan 14 17:03:37 CET 2022
-vlinux kmom10 miek19
+Wed Jun 15 11:54:44 CEST 2022
+vlinux kmom02 klwstud
 download, docker
 Inspect GUI v2.8.4 (2021-05-19)
 
 [0;30;42m>>> ======= Download (and potato)     =======[0m
 Doing a silent download, potatoe if needed.
 
-[0;30;42m>>> ======= Pre kmom10                =======[0m
+[0;30;42m>>> ======= Pre kmom02                =======[0m
 >>> -------------- Pre (all kmoms) ----------------------
-http://www.student.bth.se/~miek19/dbwebb-kurser/vlinux/me/redovisa
+http://www.student.bth.se/~klwstud/dbwebb-kurser/vlinux/me/redovisa
 
-[36m----- View docker-compose? [Y/n] ----- (B[m[36m----- Execute docker-compose up -d server? [Y/n] ----- (B[mCreating network "bthloggen_dbwebb" with the default driver
-Pulling server (xanan/vlinux-kmom10:server)...
-server: Pulling from xanan/vlinux-kmom10
-Digest: sha256:e320ac90a24c1055ebc3f0afb08195d12f958d01a938cdb7e77bec89a13d8fc2
-Status: Downloaded newer image for xanan/vlinux-kmom10:server
-Creating myserver ... 
-Creating myserver ... done
-[36m----- Execute docker-compose run client? [Y/n] ----- (B[mPulling client (xanan/vlinux-kmom10:client)...
-client: Pulling from xanan/vlinux-kmom10
-Digest: sha256:3c0a833a51b735830f0e71a37d685b3e7cfb0e6e41517597707897b9f7f63168
-Status: Downloaded newer image for xanan/vlinux-kmom10:client
-Creating bthloggen_client_run ... 
-Creating bthloggen_client_run ... done
-root@a4391a7c3871:/client# ./bthloggen.bash use server
-[3J[H[2J* * * You changed server * * *
-Server is now: server
-
-root@a4391a7c3871:/client# ./bthloggen.bash use server          ciew url feedly[1P[1@v
-Getting the requested data  url  =  feedly 
-[3J[H[2JResult:
-All result of url: feedly. 
-   
+>>> -------------- dbwebb test kmom02 -------------------------
 
 
+[0;33m### Test suite for [kmom02] in the course [vlinux] for user [klwstud] ###[0m
 
-root@a4391a7c3871:/client# exit
+
+[0;33m1. The file kmom02/bash1/answer.bash is present and have correct filename.[0m
+[0;32m✓ Yes[0m
+
+[0;33m2. The file kmom02/script/commands.bash is present and have correct filename.[0m
+[0;31mx No.[0m
+
+[0;33m3. The file kmom02/script/Dockerfile is present and have correct filename.[0m
+[0;31mx No.[0m
+
+[0;33m4. The file kmom02/script/dockerhub.bash is present and have correct filename.[0m
+[0;31mx No.[0m
+
+Press any key to continue.>>> -------------- Pre inspect -------------------------
+View dockerhub.bash? [Y/n]Press any key to execute dockerhub.bashchmod: dockerhub.bash: No such file or directory
+bash: dockerhub.bash: No such file or directory
+Press any key to delete the image.
+[0;30;42m>>> ======= dbwebb inspect            =======[0m
+Do dbwebb inspect in the background, using docker, and write output to logfile.
+
+[0;30;42m>>> ======= Docker run scripts        =======[0m
+docker-compose -f docker-compose.yaml run --rm --service-ports server bash .dbwebb/inspect-src/kmom.d/run.bash kmom02 klwstud .log/inspect/docker.txt
+Creating vlinux_server_run ... 
+Creating vlinux_server_run ... done
+
+[32;01m>>> -------------- Start                -------------------------[0m
+Running scripts in '/home/dbwebb/repo/.dbwebb/inspect-src/kmom.d/kmom02'.
+
+[32;01m>>> -------------- 20_check-lab1.bash   -------------------------[0m
+>>> Ready to begin.
+>>> 1.1 CORRECT. Well done! (1p)
+>>> 1.2 NOT YET DONE. (1p)
+>>> 1.3 NOT YET DONE. (1p)
+>>> 1.4 NOT YET DONE. (1p)
+>>> 2.1 NOT YET DONE. (1p)
+>>> 2.2 NOT YET DONE. (1p)
+>>> 2.3 NOT YET DONE. (1p)
+>>> 3.1 NOT YET DONE. (1p)
+>>> 3.2 NOT YET DONE. (1p)
+>>> 3.3 NOT YET DONE. (1p)
+>>> 4.1 NOT YET DONE. (3p)
+>>> 4.2 NOT YET DONE. (3p)
+>>> 4.3 NOT YET DONE. (3p)
+>>> Done with status 13/1/0/12 (Total/Correct/Failed/Not done).
+>>> Points earned: 1p of 19p (PASS=>10p, PASS W DISTINCTION=>19p).
+[1;33m>>> Grade: Thou Did Not Pass. :-|[m
+
+Done viewing the lab?
+[0;30;42mOK[0m 20_check-lab1.bash
+
+[32;01m>>> -------------- 30_script-files.bash -------------------------[0m
+View commands.bash? [Y/n]n
+[0;30;42mOK[0m 30_script-files.bash
+
+[32;01m>>> -------------- 99_last-check.bash   -------------------------[0m
+Do manual stuff, if needed (write e/exit to exit)?
+kmom01	kmom02	kmom03	kmom04	kmom05	kmom06	kmom10	redovisa
+root@4059200df416:/home/dbwebb/repo/me# e
 exit
-1
-[36m----- Execute docker-compose up webbclient? [Y/n] ----- (B[m[36m----- Execute docker-compose down? [Y/n] ----- (B[mStopping myserver ... 
-Stopping myserver ... done
-Removing bthloggen_client_run_9851c8c68224 ... 
-Removing myserver                          ... 
-Removing bthloggen_client_run_9851c8c68224 ... done
-Removing myserver                          ... done
-Removing network bthloggen_dbwebb
-[36m----- Run log2json.bash? [Y/n] ----- 
+[0;30;42mOK[0m 99_last-check.bash
+
+[1;37;40mDONE[0m All scripts were executed.
+[32;01m>>> -------------- Summary              -------------------------[0m
+[0;30;42mOK[0m 20_check-lab1.bash
+[0;30;42mOK[0m 30_script-files.bash
+[0;30;42mOK[0m 99_last-check.bash
+
+[0;30;42m>>> ======= Post kmom02               =======[0m
+>>> -------------- Post (all kmoms) ---------------------
