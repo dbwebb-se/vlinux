@@ -7,7 +7,7 @@ declare -a files=(
     "vhosts/dump.png"
     "vhosts/Dockerfile"
     "vhosts/mysite.vlinux.se.conf"
-    "vhosts/dockerhub.bash"
+    "dockerhub.bash"
     )
 
 # Print the header for the testsuite

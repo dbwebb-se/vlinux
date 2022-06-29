@@ -1,28 +1,31 @@
 #!/usr/bin/env bash
+. ".dbwebb/inspect-src/kmom.d/colors.bash"
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
-normal=$(tput sgr 0)
+# red=$(tput setaf 1)
+# green=$(tput setaf 2)
+# cyan=$(tput setaf 6)
+# normal=$(tput sgr 0)
 
 function printthisfile
 {
-    printf "\n${cyan}"
-    more "$1"
-    printf "${normal}\n"
+    printf "\n${CYAN}"
+    cat "$1"
+    printf "${NORMAL}\n"
 }
 
 cd me/kmom03/vhosts || exit 1
 
 printf ">>> -------------- Pre inspect -------------------------\n"
 
-read -p "View dockerhub.bash? [Y/n]" answer
+echo "Press any key to view [dockerhub.bash?]"
+read
 
-if [[ "$answer" != "n" ]]; then
-    printthisfile "dockerhub.bash"
-fi
+# if [[ "$answer" != "n" ]]; then
+printthisfile "dockerhub.bash"
+# fi
 
-read -p "Press any key to execute dockerhub.bash"
+echo "Press any key to execute [dockerhub.bash]"
+read
 
 mkdir "klwtest"
 touch "klwtest/index.html"
@@ -31,9 +34,9 @@ date >> "klwtest/index.html"
 
 
 chmod +x dockerhub.bash
-bash dockerhub.bash klwtest
+bash dockerhub.bash "klwtest"
 
-eval "$BROWSER" "http://mysite.vlinux.se:8085" &
+eval "$BROWSER" "http://mysite.vlinux.se:8080" &
 
 # read -p "Press any key to delete the image."
 #

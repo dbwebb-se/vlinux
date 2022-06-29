@@ -5,7 +5,7 @@
 declare -a files=(
     "client/client.bash"
     "server/Dockerfile"
-    "server/dockerhub.txt"
+    "dockerhub.bash"
     )
 
 # Print the header for the testsuite

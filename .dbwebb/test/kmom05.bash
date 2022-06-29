@@ -13,7 +13,7 @@ declare -a files=(
 # Print the header for the testsuite
 header "$1" "$2" "$3"
 
-# CHeck if the files exists and have correct filename
+# Check if the files exists and have correct filename
 checkIfFilesExist "${files[@]}"
 checkForSudoKmom05
 

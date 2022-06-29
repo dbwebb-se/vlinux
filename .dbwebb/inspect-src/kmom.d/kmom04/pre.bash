@@ -27,7 +27,6 @@ read -p "Press any key to execute dockerhub.bash"
 mkdir server/temp
 cp ../../example/json/* server/temp/
 
-
 chmod +x dockerhub.bash
 bash dockerhub.bash server/temp
 

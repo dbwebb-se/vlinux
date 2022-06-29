@@ -7,6 +7,7 @@ volumes:
 services:
     # Primary services to use with this course
     vlinux: &vlinux
+        platform: linux/amd64
         image: dbwebb/courserepo
         volumes:
             - ".:/home/dbwebb/repo"
@@ -17,9 +18,11 @@ services:
             - "./example/sql/inspect/my.cnf:/home/dbwebb/.my.cnf"
 
     cli:
+        platform: linux/amd64
         <<: *vlinux
 
     server:
+        platform: linux/amd64
         <<: *vlinux
         ports:
             - "1337:1337"

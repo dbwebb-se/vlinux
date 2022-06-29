@@ -1,29 +1,31 @@
 #!/usr/bin/env bash
+. ".dbwebb/inspect-src/kmom.d/colors.bash"
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
-normal=$(tput sgr 0)
+# red=$(tput setaf 1)
+# green=$(tput setaf 2)
+# cyan=$(tput setaf 6)
+# normal=$(tput sgr 0)
 
 function printthisfile
 {
-    printf "\n${cyan}"
-    more "$1"
-    printf "${normal}\n"
+    printf "\n${CYAN}"
+    cat "$1"
+    printf "${NORMAL}\n"
 }
 
 function printerror
 {
-    printf "${red} $1 '%s'\n ${normal}" "$2"
+    printf "${RED} $1 '%s'\n ${NORMAL}" "$2"
 }
 
 cd me/kmom02/script || exit 1
 
-read -p "View commands.bash? [Y/n]" answer
+echo "Press any key to view [commands.bash]"
+read
 
-if [[ "$answer" != "n" ]]; then
-    printthisfile "commands.bash"
-    success=$(echo $?)
-fi
+# if [[ "$answer" != "n" ]]; then
+printthisfile "commands.bash"
+#     success=$(echo $?)
+# fi
 
-exit $success
+# exit $success

@@ -1,22 +1,24 @@
 #!/usr/bin/env bash
+. ".dbwebb/inspect-src/kmom.d/colors.bash"
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
-normal=$(tput sgr 0)
+# red=$(tput setaf 1)
+# green=$(tput setaf 2)
+# cyan=$(tput setaf 6)
+# normal=$(tput sgr 0)
 
 function printthisfile
 {
-    printf "\n${cyan}"
-    more "$1"
-    printf "${normal}\n"
+    printf "\n${CYAN}"
+    cat "$1"
+    printf "${NORMAL}\n"
 }
 
 printf ">>> -------------- dbwebb test kmom02 -------------------------\n"
 
 dbwebb test "kmom02"
 
-read -p "Press any key to continue."
+echo "Press any key to continue."
+read
 
 
 
@@ -26,11 +28,12 @@ cd me/kmom02/script || exit 1
 
 success=0
 
-read -p "View dockerhub.bash? [Y/n]" answer
+echo "Press any key to view [dockerhub.bash]"
+read
 
-if [[ "$answer" != "n" ]]; then
-    printthisfile "dockerhub.bash"
-fi
+# if [[ "$answer" != "n" ]]; then
+printthisfile "dockerhub.bash"
+# fi
 
 read -p "Press any key to execute dockerhub.bash"
 

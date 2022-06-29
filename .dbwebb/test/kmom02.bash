@@ -6,7 +6,7 @@ declare -a files=(
     "bash1/answer.bash"
     "script/commands.bash"
     "script/Dockerfile"
-    "script/dockerhub.bash"
+    "dockerhub.bash"
     )
 
 # Print the header for the testsuite

@@ -6,4 +6,5 @@ cd me/kmom02/bash1 || exit 1
 ./answer.bash
 
 echo ""
-read -p "Done viewing the lab?"
+echo "Done viewing the lab?"
+read

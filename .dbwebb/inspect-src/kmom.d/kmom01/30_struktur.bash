@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+. ".dbwebb/inspect-src/kmom.d/colors.bash"
+
 filename="me/kmom01/structure/answers"
 
 echo "Checking exercise 2: 'Struktur'."
@@ -13,7 +15,7 @@ function printthisfile
 {
 
     printf "\n${CYAN}"
-    more "$1"
+    cat "$1"
     printf "${NORMAL}\n"
 }
 #
@@ -40,7 +42,8 @@ function printthisfile
 #
 # if [[ $success -eq 0 ]]; then
 printthisfile "$filename"
-read -p "Done with viewing file?"
+echo "Done with viewing file?"
+read
 
 rsync -avq --exclude="answers" example/structure/* me/kmom01/structure/
 # cp -r example/structure/!(answers) "me/kmom01/ex2/"
@@ -50,6 +53,11 @@ cd "me/kmom01/structure" || exit 1
 printf "${YELLOW}"
 bash answers && tree .
 printf "${NORMAL}"
+
+
+echo ""
+echo "Press any key to continue."
+read
 
 # ls -al
 # pwd
