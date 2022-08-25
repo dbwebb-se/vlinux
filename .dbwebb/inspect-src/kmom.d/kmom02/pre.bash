@@ -24,7 +24,7 @@ read
 
 printf ">>> -------------- Pre inspect -------------------------\n"
 
-cd me/kmom02/script || exit 1
+cd me/kmom02 || exit 1
 
 success=0
 
@@ -35,12 +35,14 @@ read
 printthisfile "dockerhub.bash"
 # fi
 
-read -p "Press any key to execute dockerhub.bash"
+echo "Press any key to execute dockerhub.bash"
+read
 
 chmod +x dockerhub.bash
 bash dockerhub.bash
 
-read -p "Press any key to delete the image."
+echo "Press any key to delete the image."
+read
 
 docker images -a |  grep "vlinux-commands" | awk '{print $3}' | xargs docker rmi -f
 
