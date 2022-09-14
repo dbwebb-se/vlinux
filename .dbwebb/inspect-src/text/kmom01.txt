@@ -1,6 +1,8 @@
 Tjenare,
 
-Vad bra att labbmiljön är på plats, både VirtualBox och Guest Additions. Skärmdumpen finns på plats och jag har även tittat på din logg-fil och den innehåller de delarna som är tänkt.
+Vad bra att Docker och labbmiljön är på plats. Jag har kört "dbwebb test" och dina filer ligger där de ska.
+
+Jag har även exekverat filerna för uppgifterna och de ger korrekt resultat.
 
 Jag kollade igenom din redovisningstext och den är välskriven och reflekterande.
 

@@ -4,6 +4,7 @@
 
 filename="info.txt"
 
+
 echo "Checking exercise 1: 'vanliga kommandon'."
 echo "Do not forget to look at the screenshot!"
 
@@ -23,14 +24,15 @@ function printthisfile
 #
 printthisfile "$filename"
 
+
 printf "\n${CYAN}"
-counter=1
+
 while read com; do
-    echo $counter
+
     eval "$com"
-    (( counter++ ))
 
 done < "$filename"
+
 printf "\n${NORMAL}"
 
 echo ""
