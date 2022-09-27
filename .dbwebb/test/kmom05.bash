@@ -7,7 +7,7 @@ declare -a files=(
     "maze/client/mazerunner.bash"
     "maze/client/Dockerfile"
     "maze/server/Dockerfile"
-    "maze/kmom05.bash"
+    "dockerhub.bash"
     )
 
 # Print the header for the testsuite
@@ -15,6 +15,6 @@ header "$1" "$2" "$3"
 
 # Check if the files exists and have correct filename
 checkIfFilesExist "${files[@]}"
-checkForSudoKmom05
+# checkForSudoKmom05
 
 exit "$(isSuccess)"
