@@ -13,7 +13,14 @@ function printthisfile
     printf "${NORMAL}\n"
 }
 
-cd me/kmom03/vhosts || exit 1
+printf ">>> -------------- dbwebb test kmom03 -------------------------\n"
+
+dbwebb test "kmom03"
+
+echo "Press any key to continue."
+read
+
+cd me/kmom03 || exit 1
 
 printf ">>> -------------- Pre inspect -------------------------\n"
 
@@ -27,8 +34,7 @@ printthisfile "dockerhub.bash"
 echo "Press any key to execute [dockerhub.bash]"
 read
 
-mkdir "klwtest"
-touch "klwtest/index.html"
+mkdir -p "klwtest" && touch "klwtest/index.html"
 echo "<h1>The magic script says everything is ok.</h1>" > "klwtest/index.html"
 date >> "klwtest/index.html"
 

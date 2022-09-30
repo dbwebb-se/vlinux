@@ -53,8 +53,16 @@ fi
 
 printf "${cyan}>>> -------------- Clean up -------------------------\n${normal}"
 
-printf "%s\n" "Killing container!"
-docker kill "kmom04"
+# printf "%s\n" "Killing container!"
+# docker kill "kmom04"
 
-read -p "Press any key to delete the image."
-docker rmi -f "$student_docker"
+# read -p "Press any key to delete the image."
+# docker rmi -f "$student_docker"
+
+read -p "Press any key to stop the container and delete image."
+
+docker stop "$(docker ps -aqf 'name=myserver')"
+
+docker images -a |  grep "vlinux-server" | awk '{print $3}' | xargs docker rmi -f
+
+docker rm myserver

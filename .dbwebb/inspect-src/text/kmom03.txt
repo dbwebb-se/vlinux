@@ -1,7 +1,11 @@
 Hej,
 
-Nu har vi kommit igång med Docker och Bash-script. Vi skulle skapa ett script som kunde utföra en rad uppgifter. Till det bygger vi vår första Docker image som vi publicerar. Samtidigt tränar vi mer på kommandon i labben.
+I det här kursmomentet har vi byggt upp en så kallad "namebased virtual host" i en dockercontainer med hjälp av Apache2. Det har tillkommit en del nya tekniker och termer men de är bra att ha i sin verktygslåda och känna till. Det skiljer sig inte så mycket mot andra typer av servrar.
 
-Jag körde din publicerade image och den exekverar scriptet fint och kommandot "all" gjorde vad det ska. Jag kikade på din labb och även den var korrekt. Mycket bra jobbat med kursmomentet, det är bara att köra vidare!
+I Bash har vi tittat på bland annat "grep" och förhoppningsvis blivit lite mer bekväma i terminalen.
+
+Jag har kört testerna och mappat mina egna filer som volym till ditt bashscript och det fungerar fint! Labben har jag exekverat i en container och där var det tillräckligt med poäng.
+
+Snyggt jobbat, det är bara att köra på med kursmoment 4 där vi ska skapa fler servrar.
 
 $TEACHER_SIGNATURE

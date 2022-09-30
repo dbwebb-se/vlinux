@@ -12,6 +12,13 @@ function printthisfile
     printf "${normal}\n"
 }
 
+printf ">>> -------------- dbwebb test kmom04 -------------------------\n"
+
+dbwebb test "kmom04"
+
+echo "Press any key to continue."
+read
+
 cd me/kmom04/ || exit 1
 
 printf ">>> -------------- Pre inspect -------------------------\n"
@@ -24,13 +31,15 @@ fi
 
 read -p "Press any key to execute dockerhub.bash"
 
-mkdir server/temp
+export DBWEBB_PORT="1335"
+
+mkdir -p server/temp
 cp ../../example/json/* server/temp/
 
 chmod +x dockerhub.bash
 bash dockerhub.bash server/temp
 
-eval "$BROWSER" "http://localhost:8080" &
+eval "$BROWSER" "http://localhost:$DBWEBB_PORT" &
 
 read -p "[CHECK BROWSER] Press any key to continue."
 
