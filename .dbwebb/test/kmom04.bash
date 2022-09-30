@@ -15,5 +15,6 @@ header "$1" "$2" "$3"
 checkIfFilesExist "${files[@]}"
 # checkDockerHubLines "server/" "2"
 checkDbwebbPort "client/client.bash"
+checkDbwebbPort "dockerhub.bash"
 
 exit "$(isSuccess)"
