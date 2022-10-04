@@ -61,8 +61,8 @@ function checkIfFilesExist
 
 function checkDbwebbPort
 {
-    printTest "5" "The environment variable DBWEBB_PORT is used in client.bash."
-    used=$(cat "$KMOMPATH/$1" | grep "DBWEBB_PORT")
+    printTest "$1" "The environment variable DBWEBB_PORT is used in $2."
+    used=$(cat "$KMOMPATH/$2" | grep "DBWEBB_PORT")
 
     if [[ ! -z "$used" ]]; then
         printYes

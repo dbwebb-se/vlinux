@@ -9,7 +9,7 @@ printf ">>> -------------- Post inspect -------------------------\n"
 
 # PORT="${DBWEBB_PORT:-1337}"
 export DBWEBB_PORT="1335"
-student_docker=$(cat me/kmom04/server/dockerhub.txt | head -n2 | tail -n1 | rev | sed -E -n 's/^\s?([a-zA-Z0-9]+[:][a-zA-Z0-9\-]+[/][a-zA-Z0-9]+).*/\1/p' | rev)
+#student_docker=$(cat me/kmom04/server/dockerhub.txt | head -n2 | tail -n1 | rev | sed -E -n 's/^\s?([a-zA-Z0-9]+[:][a-zA-Z0-9\-]+[/][a-zA-Z0-9]+).*/\1/p' | rev)
 
 cd me/kmom04/client || exit 1
 

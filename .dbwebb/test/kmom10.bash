@@ -3,9 +3,9 @@
 . "functions.bash"
 
 declare -a files=(
-    "client/client.bash"
-    "server/Dockerfile"
-    "dockerhub.bash"
+    "bthloggen/log2json.bash"
+    "bthloggen/docker-compose.yml"
+    "bthloggen/client/bthloggen.bash"
     )
 
 # Print the header for the testsuite
@@ -13,8 +13,6 @@ header "$1" "$2" "$3"
 
 # CHeck if the files exists and have correct filename
 checkIfFilesExist "${files[@]}"
-# checkDockerHubLines "server/" "2"
-checkDbwebbPort "5" "client/client.bash"
-checkDbwebbPort "6" "dockerhub.bash"
+# checkForLoopTag
 
 exit "$(isSuccess)"
