@@ -2,6 +2,19 @@
 
 cd "me/kmom10/bthloggen"
 
+tput setaf 6
+read -r -p "----- Run log2json.bash? [Y/n] ----- " response
+tput sgr0
+
+
+if [[ ! "$response" = "n" ]]; then
+    rm data/log.json
+    time ./log2json.bash
+    ls -alh data/
+fi
+
+read -p "----- Good filesize? ~4-5mb ----- "
+
 function executeDockerCompose
 {
     tput setaf 6
@@ -31,17 +44,4 @@ fi
 executeDockerCompose "docker-compose up -d server"
 executeDockerCompose "docker-compose run client"
 executeDockerCompose "docker-compose up webbclient"
-executeDockerCompose "docker-compose down"
-
-tput setaf 6
-read -r -p "----- Run log2json.bash? [Y/n] ----- " response
-tput sgr0
-
-
-if [[ ! "$response" = "n" ]]; then
-    rm data/log.json
-    ./log2json.bash
-    ls -alh data/
-fi
-
-read -p "----- Good filesize? ~4-5mb ----- "
+executeDockerCompose "docker-compose down --remove-orphans"
