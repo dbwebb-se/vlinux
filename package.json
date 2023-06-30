@@ -2,6 +2,7 @@
   "name": "course-repo-validation-tools",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "devDependencies": {
     "clean-css": "^4.1.9",
     "css-styleguide": "^0.9.6",
