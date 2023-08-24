@@ -2,7 +2,7 @@
 
 . ".dbwebb/inspect-src/kmom.d/colors.bash"
 
-filename="me/kmom01/structure/answers"
+filename="me/kmom01/structure/answers.bash"
 
 echo "Checking exercise 2: 'Struktur'."
 
@@ -47,7 +47,7 @@ read
 
 
 rsync -avq --exclude="answers" example/structure/ me/kmom01/structure_temp/
-cp me/kmom01/structure/answers me/kmom01/structure_temp/
+cp me/kmom01/structure/answers.bash me/kmom01/structure_temp/
 
 # cp -r example/structure/!(answers) "me/kmom01/ex2/"
 # mv "$filename" "me/kmom01/structure/"
@@ -57,7 +57,7 @@ cd "me/kmom01/structure_temp" || exit 1
 
 
 printf "${YELLOW}"
-bash answers && tree .
+bash answers.bash && tree .
 printf "${NORMAL}"
 
 

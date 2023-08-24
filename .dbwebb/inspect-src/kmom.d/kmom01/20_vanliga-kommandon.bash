@@ -2,7 +2,7 @@
 
 . ".dbwebb/inspect-src/kmom.d/colors.bash"
 
-filename="info.txt"
+filename="info"
 
 
 echo "Checking exercise 1: 'vanliga kommandon'."
