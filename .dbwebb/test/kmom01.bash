@@ -4,8 +4,8 @@
 
 declare -a files=(
     "commands/cal.png"
-    "commands/info.txt"
-    "structure/answers"
+    "commands/info.bash"
+    "structure/answers.bash"
     )
 
 # Print the header for the testsuite
