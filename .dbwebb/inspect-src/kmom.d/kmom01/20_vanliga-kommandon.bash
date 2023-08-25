@@ -2,7 +2,7 @@
 
 . ".dbwebb/inspect-src/kmom.d/colors.bash"
 
-filename="info"
+filename="info.bash"
 
 
 echo "Checking exercise 1: 'vanliga kommandon'."
@@ -28,7 +28,7 @@ printthisfile "$filename"
 printf "\n${CYAN}"
 
 while read com; do
-
+    echo ">>> "
     eval "$com"
 
 done < "$filename"
