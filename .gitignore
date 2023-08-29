@@ -1,4 +1,5 @@
 me/
+vendor/
 bin/
 build/
 .log/inspect/*
