@@ -24,17 +24,27 @@ function printthisfile
 #
 printthisfile "$filename"
 
+echo "Execute $filename? [Y/n]"
+read answer
+
+if [[ "$answer" != "n" ]]; then
+    bash "$filename"
+else
+    exit 1
+fi
 
 printf "\n${CYAN}"
 
-while read com; do
-    echo ">>> "
-    eval "$com"
+# while read com; do
+#     echo ">>> "
+#     eval "$com"
 
-done < "$filename"
+# done < "$filename"
+
+# bash "$filename"
 
 printf "\n${NORMAL}"
 
 echo ""
 echo "Press any key to continue."
-read
+read 

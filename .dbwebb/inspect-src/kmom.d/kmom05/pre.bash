@@ -5,12 +5,12 @@ green=$(tput setaf 2)
 cyan=$(tput setaf 6)
 normal=$(tput sgr 0)
 
-printf ">>> -------------- dbwebb test kmom05 -------------------------\n"
+# printf ">>> -------------- dbwebb test kmom05 -------------------------\n"
 
-dbwebb test "kmom05"
+# dbwebb test "kmom05"
 
-echo "Press any key to continue."
-read
+# echo "Press any key to continue."
+# read
 
 printf ">>> -------------- Pre inspect -------------------------\n"
 

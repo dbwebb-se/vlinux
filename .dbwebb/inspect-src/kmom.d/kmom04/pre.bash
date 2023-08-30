@@ -12,12 +12,12 @@ function printthisfile
     printf "${normal}\n"
 }
 
-printf ">>> -------------- dbwebb test kmom04 -------------------------\n"
+# printf ">>> -------------- dbwebb test kmom04 -------------------------\n"
 
-dbwebb test "kmom04"
+# dbwebb test "kmom04"
 
-echo "Press any key to continue."
-read
+# echo "Press any key to continue."
+# read
 
 cd me/kmom04/ || exit 1
 

@@ -42,11 +42,9 @@ function printthisfile
 #
 # if [[ $success -eq 0 ]]; then
 printthisfile "$filename"
-echo "Done with viewing file?"
-read
 
 
-rsync -avq --exclude="answers" example/structure/ me/kmom01/structure_temp/
+rsync -avq --exclude="answers.bash" example/structure/ me/kmom01/structure_temp/
 cp me/kmom01/structure/answers.bash me/kmom01/structure_temp/
 
 # cp -r example/structure/!(answers) "me/kmom01/ex2/"
@@ -55,15 +53,26 @@ cd "me/kmom01/structure_temp" || exit 1
 
 
 
+echo "Execute $filename? [Y/n]"
+read answer
 
-printf "${YELLOW}"
-bash answers.bash && tree .
-printf "${NORMAL}"
+if [[ "$answer" != "n" ]]; then
+    printf "${YELLOW}"
+    bash "$filename" && tree .
+    printf "${NORMAL}"
+else
+    exit 1
+fi
+
+
+# bash answers.bash && tree .
+
 
 
 echo ""
 echo "Press any key to continue."
-read
+read 
+# read
 
 # ls -al
 # pwd
