@@ -58,7 +58,7 @@ read answer
 
 if [[ "$answer" != "n" ]]; then
     printf "${YELLOW}"
-    bash "$filename" && tree .
+    bash "answers.bash" && tree .
     printf "${NORMAL}"
 else
     exit 1
