@@ -28,6 +28,14 @@ cd me/kmom02 || exit 1
 
 success=0
 
+if [[ -f "script/Dockerfile" ]]; then
+    echo "Press any key to view [Dockerfile]"
+    printthisfile "script/Dockerfile"
+else
+    echo "[Dockerfile] do not exist."
+fi
+
+
 echo "Press any key to view [dockerhub.bash]"
 read
 
