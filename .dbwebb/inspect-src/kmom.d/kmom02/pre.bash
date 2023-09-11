@@ -52,7 +52,10 @@ bash dockerhub.bash
 echo "Press any key to delete the image."
 read
 
+# theimage=$(cat dockerhub.bash | grep  "docker" | cut -d "/" -f2 | cut -d ":" -f1)
+# docker rmi -f "$theimage"
 docker images -a |  grep "vlinux-commands" | awk '{print $3}' | xargs docker rmi -f
+# docker images -a | head -2 | tail -1 | awk '{print $3}' | xargs docker rmi -f
 
 # if [[ -f  "dockerhub.txt" ]]; then
 #     url=""

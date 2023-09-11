@@ -2,7 +2,8 @@
 
 . ".dbwebb/inspect-src/kmom.d/colors.bash"
 
-filename="me/kmom01/structure/answers.bash"
+pathtofile="me/kmom01/structure"
+filename="answers.bash"
 
 echo "Checking exercise 2: 'Struktur'."
 
@@ -41,7 +42,7 @@ function printthisfile
 # done
 #
 # if [[ $success -eq 0 ]]; then
-printthisfile "$filename"
+printthisfile "$pathtofile/$filename"
 
 
 rsync -avq --exclude="answers.bash" example/structure/ me/kmom01/structure_temp/
