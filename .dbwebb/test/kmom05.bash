@@ -3,7 +3,7 @@
 . "functions.bash"
 
 declare -a files=(
-    "sed1/answer.bash"
+    "regex1/answer.bash"
     "maze/client/mazerunner.bash"
     "maze/client/Dockerfile"
     "maze/server/Dockerfile"

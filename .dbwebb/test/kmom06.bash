@@ -12,6 +12,7 @@ declare -a files=(
     "awk/7.awk"
     "awk/8.awk"
     "awk/9.awk"
+    "sed1/answer.bash"
     "maze2/client/mazerunner.bash"
     "maze2/docker-compose.yml"
     )
