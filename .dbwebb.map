@@ -26,7 +26,7 @@ me/kmom04/client
 me/kmom05/maze
 me/kmom05/maze/server
 me/kmom05/maze/client
-me/kmom05/sed1
+# me/kmom05/sed1
 me/kmom05/regex1
 
 
@@ -34,6 +34,7 @@ me/kmom05/regex1
 
 # kmom06
 me/kmom06/awk
+me/kmom05/sed1
 me/kmom06/maze2
 me/kmom06/maze2/server
 me/kmom06/maze2/client
