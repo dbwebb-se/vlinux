@@ -7,6 +7,12 @@
 import * as url from 'url'
 import * as fs from 'fs'
 import * as http from 'http'
+import * as p from 'path';
+import { readFile } from 'fs/promises';
+const __filename = url.fileURLToPath(import.meta.url);
+
+const __dirname = p.dirname(__filename);
+
 // const url = require("url")
 // const fs = require("fs")
 // const http = require("http")
@@ -209,8 +215,8 @@ router.get("/:gameid/map/:map", (req, res) => {
     }
 
     let path = __dirname + "/maps/" + map
-
-    games[gameid].currentMap = require(path)
+    let file = fs.readFileSync(`${path}`).toString()
+    games[gameid].currentMap = JSON.parse(file)
 
     //console.log(games[gameid])
 
