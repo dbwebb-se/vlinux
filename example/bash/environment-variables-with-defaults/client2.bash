@@ -5,4 +5,4 @@
 
 if [[ -v "DBWEBB_PORT" ]]; then
     echo "It exists"
-
+fi
