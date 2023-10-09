@@ -4,7 +4,7 @@ Jag har tittat på dina Awk script och din uppdaterade mazerunner samt sedlabben
 
 Awk uppgiften har du löst utmärkt. Även om vi bara skrapat på ytan så hoppas jag att du kan se nyttan med verktyget.
 
-Du ahde tillräckligt med poäng i sedlabben, snyggt!
+Du hade även tillräckligt med poäng i sedlabben, snyggt!
 
 Jag startade dina images via docker-compose olika services och det flöt på bra och din spel-loop gör vad den ska enligt instruktionerna.
 

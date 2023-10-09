@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-cyan=$(tput setaf 6)
-normal=$(tput sgr 0)
+. ".dbwebb/inspect-src/kmom.d/colors.bash"
+
+# red=$(tput setaf 1)
+# green=$(tput setaf 2)
+# cyan=$(tput setaf 6)
+# normal=$(tput sgr 0)
 
 cd me/kmom06/awk || exit 1
 
@@ -21,18 +23,19 @@ function printInfo
 
     awk -f "$curr_script" "awk_names.csv"
 
-    printf "${cyan}===============\n"
+    printf "${CYAN}===============\n"
     printf "%s\n" "Format: $format"
     printf "%s\n" "Rows: $(awk -f $curr_script 'awk_names.csv' | wc -l) ($rows)"
     printf "%s\n" "Extra: $extra"
-    printf "%s\n${normal}" "$lastfive"
+    printf "%s\n${NORMAL}" "$lastfive"
 
-    read -p "View script? [y/N] " answer
+    echo "Y to view script, Enter to continue"
+    read answer
 
     if [[ "$answer" = "y" ]]; then
-        printf "${cyan}"
+        printf "${CYAN}"
         more "$curr_script"
-        printf "${normal}"
+        printf "${NORMAL}"
     fi
 }
 
