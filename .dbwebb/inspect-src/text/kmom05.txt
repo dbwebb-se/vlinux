@@ -1,6 +1,6 @@
 Hej!
 
-Regexlabben är klar och godkänd. Jag testade även din mazerunner och den rullar på bra. Det är lätt hänt att det blir ett övermäktigt kursmoment, men du verkar ha bra koll på läget och den fungerar enligt instruktionerna, snyggt jobbat!
+Regexlabben är klar och godkänd. Jag testade även din mazerunner och den rullar på bra och det går utmärkt att spela spelet. Det är lätt hänt att det blir ett övermäktigt kursmoment, men du verkar ha bra koll på läget och den fungerar enligt instruktionerna, snyggt jobbat!
 
 Både containrarna och nätverket startar och avslutas snyggt via Bash-scriptet.
 
