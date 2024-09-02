@@ -18,6 +18,8 @@
 -*.md
 -*.txt
 -./.venv
+-./me/kmom01/*
+
 
 -*/node_modules/*
 -*/vendor/*
