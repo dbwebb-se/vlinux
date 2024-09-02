@@ -11,6 +11,7 @@ printf ">>> -------------- Post inspect -------------------------\n"
 docker ps -a | grep "bthloggen" | awk '{print $1}' | xargs docker stop
 docker ps -a | grep "bthloggen" | awk '{print $1}' | xargs docker rm
 docker images -a |  grep "bthloggen" | awk '{print $3}' | xargs docker rmi -f
+
 # docker images -a |  grep "vlinux-mazeclient" | awk '{print $3}' | xargs docker rmi -f
 
 # docker stop myserver && docker rm myserver
