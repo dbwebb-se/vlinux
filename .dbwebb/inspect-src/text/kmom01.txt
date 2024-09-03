@@ -4,7 +4,7 @@ Vad bra att Docker och labbmiljön är på plats. Jag har kört "dbwebb test" oc
 
 Jag har även exekverat filerna för uppgifterna och de ger korrekt resultat.
 
-Jag kollade igenom din redovisningstext och den är välskriven och reflekterande.
+Jag kollade igenom din redovisningstext och den är helt i sin ordning.
 
 Allt är väl, så här långt. Kör på!
 
