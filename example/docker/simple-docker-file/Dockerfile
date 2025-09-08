@@ -1,1 +1,1 @@
-FROM debian:stretch-slim
+FROM ubuntu:24.04
