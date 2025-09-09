@@ -13,6 +13,8 @@ export DBWEBB_PORT="1335"
 
 cd me/kmom04/client || exit 1
 
+chmod +x client.bash
+
 function testClient
 {
     printf "${cyan}\n"
