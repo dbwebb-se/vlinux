@@ -37,6 +37,14 @@ mkdir -p server/temp
 cp ../../example/json/* server/temp/
 
 chmod +x dockerhub.bash
+
+
+studimage=$(cat dockerhub.bash | grep -oP '[\w.-]+/[\w.-]+:[\w.-]+')
+
+isMac=$(docker buildx imagetools inspect $studimage | awk '/Platform:/ {print $2}' | head -1)
+
+[[ "$isMac" = "linux/arm64" ]] && echo "##### Injecting --platform=linux/amd64 #####" && sed -i 's|docker run |docker run --platform=linux/arm64 |' dockerhub.bash
+
 bash dockerhub.bash server/temp
 
 eval "$BROWSER" "http://localhost:$DBWEBB_PORT" &

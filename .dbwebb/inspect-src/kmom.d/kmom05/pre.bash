@@ -56,7 +56,14 @@ printf "${normal}\n"
 if [[ ! "$response" = "n" ]]; then
     # student=$(sed -n -E 's/.*\s([a-zA-Z0-9]+)[/].*server.*/\1/p' kmom05.bash)
 
-    cd "$path/../" && chmod +x dockerhub.bash && ./dockerhub.bash
+    cd "$path/../" && chmod +x dockerhub.bash 
+    
+    studimage=$(cat dockerhub.bash | grep -oP '[\w.-]+/[\w.-]+:[\w.-]+')
+
+    isMac=$(docker buildx imagetools inspect $studimage | awk '/Platform:/ {print $2}' | head -1)
+
+    [[ "$isMac" = "linux/arm64" ]] && echo "##### Injecting --platform=linux/amd64 #####" && sed -i 's|docker run |docker run --platform=linux/arm64 |' dockerhub.bash
+    bash dockerhub.bash
 
     # printf "${cyan}>>> -------------- Clean up -------------------------\n${normal}"
 

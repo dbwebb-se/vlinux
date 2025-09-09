@@ -47,6 +47,17 @@ echo "Press any key to execute dockerhub.bash"
 read
 
 chmod +x dockerhub.bash
+
+#docker buildx imagetools inspect kroh24/vlinux-commands:1.0 | awk '/Platform:/ {print $2}' | head -1
+
+#--platform=linux/arm64
+
+studimage=$(cat dockerhub.bash | grep -oP '[\w.-]+/[\w.-]+:[\w.-]+')
+
+isMac=$(docker buildx imagetools inspect $studimage | awk '/Platform:/ {print $2}' | head -1)
+
+[[ "$isMac" = "linux/arm64" ]] && echo "##### Injecting --platform=linux/amd64 #####" && sed -i 's|docker run |docker run --platform=linux/arm64 |' dockerhub.bash
+
 bash dockerhub.bash
 
 echo "Press any key to delete the image."
