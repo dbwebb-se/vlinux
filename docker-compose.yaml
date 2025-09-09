@@ -1,5 +1,3 @@
-version: "3"
-
 volumes:
     mysql_data: {}
     mariadb_data: {}
@@ -16,7 +14,6 @@ services:
             - "/home/dbwebb/repo/node_modules"
             #- "/home/dbwebb/repo/vendor"
             - "./example/sql/inspect/my.cnf:/home/dbwebb/.my.cnf"
-
     cli:
         platform: linux/amd64
         <<: *vlinux

@@ -1251,11 +1251,11 @@ makeInspectDocker()
 
     if [ $OS_TERMINAL == "linux" ]; then
         #setsid make docker-run what="make inspect what=$kmom options='--yes'" > "$LOGFILE_INSPECT" 2>&1 &
-        setsid docker-compose run --rm cli make inspect what=$kmom options='--yes' > "$LOGFILE_INSPECT" 2>&1 &
+        setsid docker compose run --rm cli make inspect what=$kmom options='--yes' > "$LOGFILE_INSPECT" 2>&1 &
         DBWEBB_INSPECT_PID="$!"
     else
         #make docker-run what="make inspect what=$kmom options='--yes'" > "$LOGFILE_INSPECT" 2>&1 &
-        docker-compose run --rm cli make inspect what=$kmom options='--yes' > "$LOGFILE_INSPECT" 2>&1 &
+        docker compose run --rm cli make inspect what=$kmom options='--yes' > "$LOGFILE_INSPECT" 2>&1 &
         DBWEBB_INSPECT_PID="$!"
     fi
 
@@ -1295,8 +1295,8 @@ makeDockerRunExtras()
        echo "No scripts to execute in docker for '$kmom'." | tee -a "$LOGFILE"
     else
         # Run the scripts using run.bash through docker-compose
-        echo "docker-compose -f docker-compose.yaml run --rm --service-ports server bash $script $kmom $acronym $LOG_DOCKER_REL" | tee -a "$LOGFILE"
-        docker-compose -f docker-compose.yaml run -it --rm --service-ports server bash $script $kmom $acronym $LOG_DOCKER_REL 2>&1 | tee -a "$LOGFILE"
+        echo "docker compose -f docker-compose.yaml run --rm --service-ports server bash $script $kmom $acronym $LOG_DOCKER_REL" | tee -a "$LOGFILE"
+        docker compose -f docker-compose.yaml run --user $(id -u):$(id -g) -it --rm --service-ports server bash $script $kmom $acronym $LOG_DOCKER_REL 2>&1 | tee -a "$LOGFILE"
     fi
 }
 
