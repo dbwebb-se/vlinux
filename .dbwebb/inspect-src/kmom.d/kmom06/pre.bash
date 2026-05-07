@@ -42,4 +42,4 @@ fi
 
 executeDockerCompose "docker-compose up -d server"
 executeDockerCompose "docker-compose run client"
-executeDockerCompose "docker-compose down"
+executeDockerCompose "docker-compose down --remove-orphans"
